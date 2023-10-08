@@ -1,6 +1,7 @@
 <template>
-    <div>
-        page
+    <div class="">
+        <LandingFirstSection class="mt-4"></LandingFirstSection>
+        <LandingBooks class="mt-10"></LandingBooks>
     </div>
 </template>
 

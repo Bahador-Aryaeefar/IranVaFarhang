@@ -1,5 +1,5 @@
 <template>
-    <div dir="rtl" class="font-Yekan">
+    <div dir="rtl" class="font-Yekan pb-[40rem]">
         <MainNavbar></MainNavbar>
         <slot />
     </div>
