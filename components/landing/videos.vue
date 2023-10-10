@@ -14,7 +14,6 @@
             <LandingVideoFrame :score="4.7" url="/images/landing/video1.png">تجربه آموزش مثلثات با استفاده از اشکال</LandingVideoFrame>
             <LandingVideoFrame :score="4.6" url="/images/landing/video2.png" color="2">آموزش الهی نامه پایه دهم</LandingVideoFrame>
             <LandingVideoFrame :score="4.7" url="/images/landing/video1.png">تجربه آموزش مثلثات با استفاده از اشکال</LandingVideoFrame>
-            <LandingVideoFrame :score="4.6" url="/images/landing/video2.png" color="2">آموزش الهی نامه پایه دهم</LandingVideoFrame>
         </div>
     </div>
 </template>
