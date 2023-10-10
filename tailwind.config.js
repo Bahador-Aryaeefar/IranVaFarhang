@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {
       screens: {
+        'split' : {'max': '800px'},
         'mobile': {'max': '1200px'}
       },
       fontFamily: {

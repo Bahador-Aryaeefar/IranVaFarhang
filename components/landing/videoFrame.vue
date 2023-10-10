@@ -1,5 +1,5 @@
 <template>
-    <div class="p-4 rounded-[1rem] bg-white shadow-xl text-[#2B2B2B] cursor-pointer group">
+    <div class="p-4 rounded-[1rem] bg-white shadow-lg text-[#2B2B2B] cursor-pointer group">
         <div class="w-[26.25rem] h-[15.1875em] rounded-[1rem] overflow-hidden flex items-center justify-center relative">
             <img class="w-full h-full absolute left-0 top-0 group-hover:scale-[108%] transition-all duration-500" :src="url" alt="video">
             <img class="w-16 h-16 z-[1]" :src="`/icons/landing/play${color}.svg`" alt="play">

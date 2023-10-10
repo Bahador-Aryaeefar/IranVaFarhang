@@ -1,29 +1,29 @@
 <template>
     <div class="mx-10">
-        <div class="bg-white rounded-[2rem] shadow-xl pt-8 pb-8 max-w-[60rem] mx-auto">
-            <div class="text-[3rem] font-bold text-[#2D2D2D] text-center">20,037</div>
-            <div class="text-[2rem] text-[#2B2B2B] text-center">تعداد آثار</div>
+        <div class="bg-white rounded-[2rem] shadow-lg pt-8 pb-8 max-w-[60rem] mx-auto">
+            <div class="text-[2rem] font-bold text-[#2D2D2D] text-center">20,037</div>
+            <div class="text-[1.75rem] text-[#2B2B2B] text-center">تعداد آثار</div>
 
-            <div class="w-[90%] h-[0.125rem] bg-[#26C3C2] rounded-full mt-8 mx-auto"></div>
+            <div class="w-[80%] h-[0.125rem] bg-[#26C3C2] rounded-full mt-8 mx-auto"></div>
 
-            <div class="flex items-center mt-12 text-center">
+            <div class="flex items-center mt-12 text-center w-[90%] mx-auto">
                 <div class="w-1/3">
-                    <div class="text-[1.75rem] text-[#2D2D2D] font-bold">3075</div>
-                    <div class="text-2xl text-[#2B2B2B]">کتاب ها</div>
+                    <div class="text-2xl text-[#2D2D2D] font-bold">3075</div>
+                    <div class="text-lg text-[#2B2B2B]">کتاب ها</div>
                 </div>
 
-                <div class="h-12 w-[0.125rem] bg-[#26C3C2] rounded-full"></div>
+                <div class="h-10 w-[0.125rem] bg-[#26C3C2] rounded-full"></div>
 
                 <div class="w-1/3">
-                    <div class="text-[1.75rem] text-[#2D2D2D] font-bold">12042</div>
-                    <div class="text-2xl text-[#2B2B2B]">مقالات</div>
+                    <div class="text-2xl text-[#2D2D2D] font-bold">12042</div>
+                    <div class="text-lg text-[#2B2B2B]">مقالات</div>
                 </div>
 
-                <div class="h-12 w-[0.125rem] bg-[#26C3C2] rounded-full"></div>
+                <div class="h-10 w-[0.125rem] bg-[#26C3C2] rounded-full"></div>
 
                 <div class="w-1/3">
-                    <div class="text-[1.75rem] text-[#2D2D2D] font-bold">5020</div>
-                    <div class="text-2xl text-[#2B2B2B]">تجربه های برتر</div>
+                    <div class="text-2xl text-[#2D2D2D] font-bold">5020</div>
+                    <div class="text-lg text-[#2B2B2B]">تجربه های برتر</div>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
 
             <div class="h-[0.125rem] rounded-full bg-[#60D3D2] mt-5"></div>
 
-            <div class="h-20 rounded-full bg-white flex justify-between px-12 items-center shadow-xl mt-5">
+            <div class="h-20 rounded-full bg-white flex justify-between px-12 items-center shadow-lg mt-5">
                 <span class="text-black font-bold text-[1.75rem]">کرمانشاه</span>
                 <div class="flex items-center gap-3 text-black font-bold text-2xl">
                     2,137
@@ -41,7 +41,7 @@
                 </div>
             </div>
 
-            <div class="bg-white rounded-[2rem] pt-2 mt-4 shadow-xl">
+            <div class="bg-white rounded-[2rem] pt-4 mt-4 shadow-lg">
                 <div class="mx-auto w-fit relative">
                     <div
                         class="relative text-[1.5rem] font-bold text-[#444444] flex w-fit rounded-[0.75rem] items-center justify-center bg-[#F9F9F9] px-10 h-10 cursor-pointer">
@@ -51,80 +51,85 @@
                     </div>
                 </div>
 
-                <div class="mt-6 pt-4 pb-[5rem] relative">
-                    <div class="relative flex flex-row-reverse text-[#444444] text-base items-center pl-4 pr-16 gap-2">
+                <div class="mt-6 pt-4 pb-[5rem] relative text-lg">
+                    <div class="relative flex flex-row-reverse text-[#444444] items-center pl-4 pr-16 gap-2">
                         <span class="text-center w-16">2000</span>
                         <div class="grow h-[0.125rem] bg-[#707070] rounded-full"></div>
                     </div>
 
-                    <div class="relative flex flex-row-reverse text-[#444444] text-base items-center pl-4 pr-16 gap-2 mt-8">
+                    <div class="relative flex flex-row-reverse text-[#444444] items-center pl-4 pr-16 gap-2 mt-8">
                         <span class="text-center w-16">1000</span>
                         <div class="grow h-[0.125rem] bg-[#707070] rounded-full"></div>
                     </div>
 
-                    <div class="relative flex flex-row-reverse text-[#444444] text-base items-center pl-4 pr-16 gap-2 mt-8">
+                    <div class="relative flex flex-row-reverse text-[#444444] items-center pl-4 pr-16 gap-2 mt-8">
                         <span class="text-center w-16">0</span>
                     </div>
 
                     <div class="absolute w-full h-full top-0 left-0">
-                        <div class="items-end pb-[5.5rem] ml-[5.5rem] h-full mr-16 flex justify-between flex-row-reverse">
+                        <div class="items-end pb-[5.5rem] ml-[5.5rem] h-full mr-16 flex justify-between flex-row-reverse text-lg">
                             <div class="h-full w-4 bg-[#64D4CE] rounded-full relative">
                                 <span
-                                    class="absolute -bottom-7 text-[#434343] text-sm -left-1.5 right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">تهران</span>
+                                    class="absolute -bottom-8 text-[#434343] -left-[0.25rem] right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">تهران</span>
                             </div>
 
                             <div class="h-[90%] w-4 bg-[#72DFDA] rounded-full relative border-[0.125rem] border-[#1FB6EF]">
                                 <span
-                                    class="absolute -bottom-7 text-[#434343] text-sm -left-1.5 right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">کرمانشاه</span>
+                                    class="absolute -bottom-8 text-[#434343] -left-[0.25rem] right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">کرمانشاه</span>
                             </div>
 
                             <div class="h-[80%] w-4 bg-[#72DFDA] rounded-full relative">
                                 <span
-                                    class="absolute -bottom-7 text-[#434343] text-sm -left-1.5 right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">فارس</span>
+                                    class="absolute -bottom-8 text-[#434343] -left-[0.25rem] right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">فارس</span>
                             </div>
 
                             <div class="h-[80%] w-4 bg-[#72DFDA] rounded-full relative">
                                 <span
-                                    class="absolute -bottom-7 text-[#434343] text-sm -left-1.5 right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">اصفهان</span>
+                                    class="absolute -bottom-8 text-[#434343] -left-[0.25rem] right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">اصفهان</span>
                             </div>
 
                             <div class="h-[75%] w-4 bg-[#84E6E1] rounded-full relative">
                                 <span
-                                    class="absolute -bottom-7 text-[#434343] text-sm -left-1.5 right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">کردستان</span>
+                                    class="absolute -bottom-8 text-[#434343] -left-[0.25rem] right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">کردستان</span>
                             </div>
 
                             <div class="h-[70%] w-4 bg-[#84E6E1] rounded-full relative">
                                 <span
-                                    class="absolute -bottom-7 text-[#434343] text-sm -left-1.5 right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">گلستان</span>
+                                    class="absolute -bottom-8 text-[#434343] -left-[0.25rem] right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">گلستان</span>
                             </div>
 
                             <div class="h-[65%] w-4 bg-[#92ECE8] rounded-full relative">
                                 <span
-                                    class="absolute -bottom-7 text-[#434343] text-sm -left-1.5 right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">قم</span>
+                                    class="absolute -bottom-8 text-[#434343] -left-[0.25rem] right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">قم</span>
                             </div>
 
                             <div class="h-[60%] w-4 bg-[#92ECE8] rounded-full relative">
                                 <span
-                                    class="absolute -bottom-7 text-[#434343] text-sm -left-1.5 right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">همدان</span>
+                                    class="absolute -bottom-8 text-[#434343] -left-[0.25rem] right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">همدان</span>
                             </div>
 
                             <div class="h-[58%] w-4 bg-[#ADEBE7] rounded-full relative">
                                 <span
-                                    class="absolute -bottom-7 text-[#434343] text-sm -left-1.5 right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">قزوین</span>
+                                    class="absolute -bottom-8 text-[#434343] -left-[0.25rem] right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">قزوین</span>
                             </div>
 
                             <div class="h-[50%] w-4 bg-[#BCF5F1] rounded-full relative">
                                 <span
-                                    class="absolute -bottom-7 text-[#434343] text-sm -left-1.5 right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">کرج</span>
+                                    class="absolute -bottom-8 text-[#434343] -left-[0.25rem] right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">کرج</span>
                             </div>
 
                             <div class="h-[45%] w-4 bg-[#CAFBF7] rounded-full relative">
                                 <span
-                                    class="absolute -bottom-7 text-[#434343] text-sm -left-1.5 right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">هرمزگان</span>
+                                    class="absolute -bottom-8 text-[#434343] -left-[0.25rem] right-0 mx-auto block text-center -rotate-90 whitespace-nowrap">هرمزگان</span>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="h-16 rounded-full bg-white flex p-2 mt-4 shadow-lg">
+                <div class="cursor-pointer rounded-full w-1/2 h-full flex items-center justify-center text-2xl text-[#434343]">استان</div>
+                <div class="cursor-pointer rounded-full bg-[#72DFDA] w-1/2 h-full flex items-center justify-center text-2xl text-white font-bold">کشور</div>
             </div>
         </div>
     </div>
