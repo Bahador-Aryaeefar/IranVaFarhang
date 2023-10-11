@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div>
         <LandingFirstSection class="mt-4"></LandingFirstSection>
         <LandingBooks class="mt-20"></LandingBooks>
         <LandingVideos class="mt-10"></LandingVideos>

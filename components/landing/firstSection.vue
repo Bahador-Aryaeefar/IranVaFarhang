@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="h-12 bg-white rounded-full flex items-center mx-10">
-            <input class="grow h-full text-black focus:outline-none placeholder:text-[#707070] bg-transparent px-6"
+        <div class="h-16 bg-white rounded-full flex items-center mx-10 shadow-sm">
+            <input class="grow h-full text-black focus:outline-none placeholder:text-[#707070] bg-transparent px-6 text-lg"
                 type="text" placeholder="جستجو پیشرفته">
             <img class="w-6 h-6 mx-5" src="/icons/landing/search.png" alt="search">
         </div>
@@ -31,5 +31,3 @@
         </div>
     </div>
 </template>
-
-<style scoped></style>
