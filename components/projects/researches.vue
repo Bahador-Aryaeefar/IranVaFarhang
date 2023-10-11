@@ -109,7 +109,7 @@
 
         <div class="fixed bottom-0 right-0 pb-14 px-10 w-full">
             <div class="max-w-[100rem] mx-auto w-full flex items-center gap-4 text-[#21C2C0] text-[2rem] font-bold">
-                <div class="w-20 h-20 shrink-0 rounded-full bg-[#21C2C0] relative cursor-pointer"
+                <div class="w-20 h-20 shrink-0 rounded-full bg-[#21C2C0] relative cursor-pointer shadow-lg"
                     @click="navigateTo('/projects/research/new')">
                     <div class="w-[60%] h-[0.5rem] bg-white rounded-full absolute top-0 bottom-0 left-0 right-0 m-auto">
                     </div>
