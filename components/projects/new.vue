@@ -1,5 +1,5 @@
 <template>
-    <div class="mx-10">
+    <div>
         <div
             class="bg-white rounded-full shadow-lg flex items-center justify-center text-black text-[1.75rem] font-bold h-16">
             ثبت اقدام پژوهی جدید
@@ -89,6 +89,5 @@
 
             <button class="h-20 rounded-[1.25rem] bg-white text-[#21C2C0] border-[0.125rem] border-[#21C2C0] text-[2rem] font-bold w-full" @click="navigateTo('/projects/research')">ثبت</button>
         </div>
-
     </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-    <div class="mx-10">
+    <div class="">
         <div
             class="bg-white rounded-full shadow-lg flex items-center justify-center text-black text-[1.75rem] font-bold h-16">
             تاریخچه رویداد ها

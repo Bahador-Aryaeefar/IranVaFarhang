@@ -1,5 +1,5 @@
 <template>
-    <div class="mx-10">
+    <div class="">
         <div class="bg-white rounded-[2rem] shadow-lg pt-8 pb-8 max-w-[60rem] mx-auto">
             <div class="text-[2rem] font-bold text-[#2D2D2D] text-center">20,037</div>
             <div class="text-[1.75rem] text-[#2B2B2B] text-center">تعداد آثار</div>
