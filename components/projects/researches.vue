@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <div
-            class="bg-white rounded-full shadow-lg flex items-center justify-center text-black text-[1.75rem] font-bold h-16">
+            class="bg-white rounded-full shadow-md flex items-center justify-center text-black text-[1.75rem] font-bold h-16">
             اقدام پژوهی
             <span class="text-xl px-2 pt-1.5">(2)</span>
         </div>
@@ -40,10 +40,10 @@
                     <div class="flex justify-between items-center">
                         <div class="flex gap-4 items-center grow">
                             <div
-                                class="w-20 h-20 shrink-0 rounded-full flex items-center justify-center bg-[#34C3C9] text-white text-[3rem] shadow-lg">
+                                class="w-20 h-20 shrink-0 rounded-full flex items-center justify-center bg-[#34C3C9] text-white text-[3rem] shadow-md">
                                 1</div>
                             <div
-                                class="text-[1.75rem] mobile:text-center mobile:text-[1.5rem] text-[#00B9B7] shadow-lg font-bold flex items-center px-6 bg-white h-20 rounded-full grow">
+                                class="text-[1.75rem] mobile:text-center mobile:text-[1.5rem] text-[#00B9B7] shadow-md font-bold flex items-center px-6 bg-white h-20 rounded-full grow">
                                 بررسی توسط داور ناحیه</div>
                         </div>
 
@@ -58,10 +58,10 @@
                     <div class="flex justify-between items-center">
                         <div class="flex gap-4 items-center grow">
                             <div
-                                class="w-20 h-20 shrink-0 rounded-full flex items-center justify-center bg-[#34C3C9] text-white text-[3rem] shadow-lg">
+                                class="w-20 h-20 shrink-0 rounded-full flex items-center justify-center bg-[#34C3C9] text-white text-[3rem] shadow-md">
                                 2</div>
                             <div
-                                class="text-[1.75rem] mobile:text-center mobile:text-[1.5rem] text-[#00B9B7] shadow-lg font-bold flex items-center px-6 bg-white h-20 rounded-full grow">
+                                class="text-[1.75rem] mobile:text-center mobile:text-[1.5rem] text-[#00B9B7] shadow-md font-bold flex items-center px-6 bg-white h-20 rounded-full grow">
                                 بررسی توسط داور شهرستان</div>
                         </div>
 
@@ -76,10 +76,10 @@
                     <div class="flex justify-between items-center">
                         <div class="flex gap-4 items-center grow">
                             <div
-                                class="w-20 h-20 shrink-0 rounded-full flex items-center justify-center bg-white text-balck text-[3rem] shadow-lg border-[0.125rem] border-[#36C4CA]">
+                                class="w-20 h-20 shrink-0 rounded-full flex items-center justify-center bg-white text-balck text-[3rem] shadow-md border-[0.125rem] border-[#36C4CA]">
                                 3</div>
                             <div
-                                class="text-[1.75rem] mobile:text-center mobile:text-[1.5rem] text-black shadow-lg font-bold flex items-center px-6 bg-white h-20 rounded-full border-[0.125rem] border-[#36C4CA] grow">
+                                class="text-[1.75rem] mobile:text-center mobile:text-[1.5rem] text-black shadow-md font-bold flex items-center px-6 bg-white h-20 rounded-full border-[0.125rem] border-[#36C4CA] grow">
                                 بررسی توسط داور شهرستان</div>
                         </div>
 
@@ -93,7 +93,7 @@
                 </div>
 
                 <div
-                    class="bg-white text-xl text-[#000000] py-4 px-6 rounded-[2rem] border-[0.125rem] border-[#36C4CA] mr-24 ml-[7rem] mt-3 shadow-lg">
+                    class="bg-white text-xl text-[#000000] py-4 px-6 rounded-[2rem] border-[0.125rem] border-[#36C4CA] mr-24 ml-[7rem] mt-3 shadow-md">
                     سلام واحترام
                     <br>
                     تشکر ویژه از شما فرهنگی عزیز
@@ -109,7 +109,7 @@
 
         <div class="fixed bottom-0 right-0 pb-14 px-10 w-full">
             <div class="max-w-[100rem] mx-auto w-full flex items-center gap-4 text-[#21C2C0] text-[2rem] font-bold">
-                <div class="w-20 h-20 shrink-0 rounded-full bg-[#21C2C0] relative cursor-pointer shadow-lg"
+                <div class="w-20 h-20 shrink-0 rounded-full bg-[#21C2C0] relative cursor-pointer shadow-md"
                     @click="navigateTo('/projects/research/new')">
                     <div class="w-[60%] h-[0.5rem] bg-white rounded-full absolute top-0 bottom-0 left-0 right-0 m-auto">
                     </div>

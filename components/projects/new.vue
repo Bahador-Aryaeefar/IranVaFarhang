@@ -1,7 +1,7 @@
 <template>
     <div>
         <div
-            class="bg-white rounded-full shadow-lg flex items-center justify-center text-black text-[1.75rem] font-bold h-16">
+            class="bg-white rounded-full shadow-md flex items-center justify-center text-black text-[1.75rem] font-bold h-16">
             ثبت اقدام پژوهی جدید
         </div>
 
@@ -14,7 +14,7 @@
                 <div class="h-[0.125rem] rounded-full bg-[#21C2C0] mt-2"></div>
 
                 <input
-                    class="h-16 w-full bg-white rounded-full focus:outline-none px-8 mt-2 placeholder:text-[#707070] text-[#000000] text-xl text-center shadow-lg"
+                    class="h-16 w-full bg-white rounded-full focus:outline-none px-8 mt-2 placeholder:text-[#707070] text-[#000000] text-xl text-center shadow-md"
                     type="text" placeholder="نام اثر را وارد کنید">
             </div>
 
@@ -27,7 +27,7 @@
 
                 <div class="mt-2">
                     <div
-                        class="h-16 w-full bg-white rounded-full focus:outline-none px-8 text-[#000000] text-xl flex items-center justify-center relative cursor-pointer shadow-lg">
+                        class="h-16 w-full bg-white rounded-full focus:outline-none px-8 text-[#000000] text-xl flex items-center justify-center relative cursor-pointer shadow-md">
                         ریاضی
                         <img class="absolute left-8 top-0 bottom-0 my-auto h-5 pt-1" src="/icons/projects/down.svg"
                             alt="down">
@@ -43,7 +43,7 @@
                 <div class="h-[0.125rem] rounded-full bg-[#21C2C0] mt-2"></div>
 
                 <textarea
-                    class="h-[15rem] min-h-20 w-full bg-white rounded-[3rem] focus:outline-none px-8 py-3 mt-2 placeholder:text-[#707070] text-[#000000] text-xl text-center shadow-lg"
+                    class="h-[15rem] min-h-20 w-full bg-white rounded-[3rem] focus:outline-none px-8 py-3 mt-2 placeholder:text-[#707070] text-[#000000] text-xl text-center shadow-md"
                     placeholder="چکیده اثر را وارد کنید"></textarea>
             </div>
 
@@ -55,7 +55,7 @@
                 <div class="h-[0.125rem] rounded-full bg-[#21C2C0] mt-2"></div>
 
                 <input
-                    class="h-16 w-full bg-white rounded-full focus:outline-none px-8 mt-2 placeholder:text-[#707070] text-[#000000] text-xl text-center shadow-lg"
+                    class="h-16 w-full bg-white rounded-full focus:outline-none px-8 mt-2 placeholder:text-[#707070] text-[#000000] text-xl text-center shadow-md"
                     type="text" placeholder="رده سنی را وارد کنید">
             </div>
 
@@ -66,7 +66,7 @@
 
                 <div class="h-[0.125rem] rounded-full bg-[#21C2C0] mt-2"></div>
 
-                <button class="h-16 w-full bg-[#21C2C0] rounded-full text-white text-xl shadow-lg mt-2">انتخاب فایل</button>
+                <button class="h-16 w-full bg-[#21C2C0] rounded-full text-white text-xl shadow-md mt-2">انتخاب فایل</button>
             </div>
 
 

@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <div class="bg-white rounded-[2rem] shadow-lg pt-8 pb-8 max-w-[60rem] mx-auto">
+        <div class="bg-white rounded-[2rem] shadow-md pt-8 pb-8 max-w-[60rem] mx-auto">
             <div class="text-[2rem] font-bold text-[#2D2D2D] text-center">20,037</div>
             <div class="text-[1.75rem] text-[#2B2B2B] text-center">تعداد آثار</div>
 
@@ -33,7 +33,7 @@
 
             <div class="h-[0.125rem] rounded-full bg-[#60D3D2] mt-5"></div>
 
-            <div class="h-20 rounded-full bg-white flex justify-between px-12 items-center shadow-lg mt-5">
+            <div class="h-20 rounded-full bg-white flex justify-between px-12 items-center shadow-md mt-5">
                 <span class="text-black font-bold text-[1.75rem]">کرمانشاه</span>
                 <div class="flex items-center gap-3 text-black font-bold text-2xl">
                     2,137
@@ -41,7 +41,7 @@
                 </div>
             </div>
 
-            <div class="bg-white rounded-[2rem] pt-4 mt-4 shadow-lg">
+            <div class="bg-white rounded-[2rem] pt-4 mt-4 shadow-md">
                 <div class="mx-auto w-fit relative">
                     <div
                         class="relative text-[1.5rem] font-bold text-[#444444] flex w-fit rounded-[0.75rem] items-center justify-center bg-[#F9F9F9] px-10 h-10 cursor-pointer">
@@ -127,7 +127,7 @@
                 </div>
             </div>
 
-            <div class="h-16 rounded-full bg-white flex p-2 mt-4 shadow-lg">
+            <div class="h-16 rounded-full bg-white flex p-2 mt-4 shadow-md">
                 <div class="cursor-pointer rounded-full w-1/2 h-full flex items-center justify-center text-2xl text-[#434343]">استان</div>
                 <div class="cursor-pointer rounded-full bg-[#72DFDA] w-1/2 h-full flex items-center justify-center text-2xl text-white font-bold">کشور</div>
             </div>

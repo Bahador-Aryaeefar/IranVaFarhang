@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white rounded-[2rem] shadow-lg flex items-center p-4 gap-4 relative">
+    <div class="bg-white rounded-[2rem] shadow-md flex items-center p-4 gap-4 relative">
         <div class="w-[9.375rem] h-[12.25rem] rounded-[1rem] bg-cover shrink-0" :style="`background-image: url('${url}');`">
         </div>
 

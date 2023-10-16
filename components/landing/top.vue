@@ -1,7 +1,7 @@
 <template>
-    <div class="bg-white h-[6rem] rounded-[2.5rem] w-[35rem] flex justify-between items-center shadow-lg">
+    <div class="bg-white h-[6rem] rounded-[2.5rem] w-[35rem] flex justify-between items-center shadow-md">
         <div class="flex items-center">
-            <img class="w-[8rem] mr-6 rounded-full border-[0.25rem] border-white shadow-lg" :src="profile" alt="profile">
+            <img class="w-[8rem] mr-6 rounded-full border-[0.25rem] border-white shadow-md" :src="profile" alt="profile">
 
             <div class="h-[4.5rem] w-[0.125rem] mr-5 rounded-full" :class="color"></div>
 

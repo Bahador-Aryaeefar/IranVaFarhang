@@ -7,13 +7,13 @@
         </div>
 
         <div
-            class="pb-5 h-[12.5rem] bg-[#E0F2F1] mt-5 rounded-[2.5rem] shadow-lg flex flex-col items-center justify-center text-[#28C0CD] gap-1 text-center">
+            class="pb-5 h-[12.5rem] bg-[#E0F2F1] mt-5 rounded-[2.5rem] shadow-md flex flex-col items-center justify-center text-[#28C0CD] gap-1 text-center">
             <div class="text-[2.375rem] w-full -mr-[1.4rem]" style="letter-spacing: 1.5rem;">1402</div>
             <div class="text-xl w-full">مهار تورم ، رشد تولید</div>
         </div>
 
         <div class="flex gap-x-2 gap-y-5 mt-5 split:flex-wrap">
-            <div class="w-1/2 split:w-full shadow-lg rounded-[1.25rem] overflow-hidden relative font-bold cursor-pointer group"
+            <div class="w-1/2 split:w-full shadow-md rounded-[1.25rem] overflow-hidden relative font-bold cursor-pointer group"
                 @click="navigateTo('/books')" style="background-image: url(''); container-type: inline-size;">
                 <img class="w-full group-hover:scale-[104%] transition-all duration-500" src="/images/landing/projects.png"
                     alt="projects">
@@ -21,7 +21,7 @@
                     مقالات</span>
             </div>
 
-            <div class="w-1/2 split:w-full shadow-lg rounded-[1.25rem] overflow-hidden relative font-bold cursor-pointer group"
+            <div class="w-1/2 split:w-full shadow-md rounded-[1.25rem] overflow-hidden relative font-bold cursor-pointer group"
                 style="background-image: url(''); container-type: inline-size;">
                 <img class="w-full group-hover:scale-[104%] transition-all duration-500" src="/images/landing/teachings.png"
                     alt="teachings">
