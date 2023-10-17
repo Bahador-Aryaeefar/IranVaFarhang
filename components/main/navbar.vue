@@ -7,11 +7,13 @@
                 <div class="w-2.5 h-2.5 rounded-full bg-white"></div>
             </div>
 
-            <div class="flex items-center gap-3">
+            <div v-if="false" class="flex items-center gap-3">
                 <span class="cursor-pointer hover:text-[#BCF5F1]">ورود</span>
                 <div class="h-4 w-[0.125rem] bg-white rounded-full"></div>
                 <span class="cursor-pointer hover:text-[#BCF5F1]">ثبت نام</span>
             </div>
+
+            <div v-else class="cursor-pointer hover:text-[#BCF5F1]" @click="navigateTo('/profile')">محمدجواد صیادیان</div>
         </div>
         
         <div class="cursor-pointer hover:text-[#BCF5F1]" @click="navigateTo('/')">ایران و فرهنگ</div>
