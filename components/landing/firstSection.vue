@@ -14,7 +14,7 @@
 
         <div class="flex gap-x-2 gap-y-5 mt-5 split:flex-wrap">
             <div class="w-1/2 split:w-full shadow-md rounded-[1.25rem] overflow-hidden relative font-bold cursor-pointer group"
-                @click="navigateTo('/books')" style="background-image: url(''); container-type: inline-size;">
+                @click="navigateTo('/books')" style="container-type: inline-size;">
                 <img class="w-full group-hover:scale-[104%] transition-all duration-500" src="/images/landing/projects.png"
                     alt="projects">
                 <span class="text-black absolute left-[10%] top-0 bottom-0 my-auto text-[5cqw] h-fit">کتاب ها و
@@ -22,7 +22,7 @@
             </div>
 
             <div class="w-1/2 split:w-full shadow-md rounded-[1.25rem] overflow-hidden relative font-bold cursor-pointer group"
-                style="background-image: url(''); container-type: inline-size;">
+                @click="navigateTo('/tops')" style="container-type: inline-size;">
                 <img class="w-full group-hover:scale-[104%] transition-all duration-500" src="/images/landing/teachings.png"
                     alt="teachings">
                 <span class="text-black absolute left-[10%] top-0 bottom-0 my-auto text-[5cqw] h-fit">تجربه های برتر

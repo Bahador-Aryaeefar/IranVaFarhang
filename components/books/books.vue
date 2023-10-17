@@ -3,28 +3,28 @@
         <div class="flex gap-4 mt-8 max-w-[60rem] mx-auto text-[#707070] font-bold flex-wrap">
             <div class="flex-[2] mobile:w-full mobile:flex-auto">
                 <div
-                    class="h-16 w-full bg-white rounded-full focus:outline-none px-8 text-xl flex items-center justify-center relative cursor-pointer shadow-md">
+                    class="h-16 w-full bg-white rounded-full focus:outline-none pl-4 text-xl flex items-center justify-center relative cursor-pointer shadow-md">
                     کتاب ها
-                    <img class="absolute left-8 top-0 bottom-0 my-auto h-5 pt-1" src="/icons/books/down.svg" alt="down">
+                    <img class="absolute left-4 top-0 bottom-0 my-auto h-[1.125rem] pt-1" src="/icons/books/down.svg" alt="down">
                 </div>
             </div>
             <div class="flex-1">
                 <div
-                    class="h-16 w-full bg-white rounded-full focus:outline-none px-8 text-xl flex items-center justify-center relative cursor-pointer shadow-md">
+                    class="h-16 w-full bg-white rounded-full focus:outline-none pl-4 text-xl flex items-center justify-center relative cursor-pointer shadow-md">
                     موضوع
-                    <img class="absolute left-8 top-0 bottom-0 my-auto h-5 pt-1" src="/icons/books/down.svg" alt="down">
+                    <img class="absolute left-4 top-0 bottom-0 my-auto h-[1.125rem] pt-1" src="/icons/books/down.svg" alt="down">
                 </div>
             </div>
             <div class="flex-1">
                 <div
-                    class="h-16 w-full bg-white rounded-full focus:outline-none px-8 text-xl flex items-center justify-center relative cursor-pointer shadow-md">
+                    class="h-16 w-full bg-white rounded-full focus:outline-none pl-4 text-xl flex items-center justify-center relative cursor-pointer shadow-md">
                     پایه
-                    <img class="absolute left-8 top-0 bottom-0 my-auto h-5 pt-1" src="/icons/books/down.svg" alt="down">
+                    <img class="absolute left-4 top-0 bottom-0 my-auto h-[1.125rem] pt-1" src="/icons/books/down.svg" alt="down">
                 </div>
             </div>
         </div>
 
-        <div class="h-[0.125rem] rounded-full bg-[#26C3C2] mt-8"></div>
+        <div class="h-[0.125rem] rounded-full bg-[#26C3C2] mt-8 max-w-[60rem] mx-auto"></div>
 
         <div class="mt-8 flex gap-4 max-w-[60rem] mx-auto">
             <div class="h-16 bg-white rounded-full flex items-center shadow-sm px-3 grow">
@@ -42,20 +42,20 @@
         <div v-if="isAdvance" class="flex gap-4 mt-4 max-w-[60rem] mx-auto text-[#707070] font-bold">
             <div class="flex-1">
                 <div
-                    class="h-16 w-full bg-white rounded-full focus:outline-none px-8 text-xl flex items-center justify-center relative cursor-pointer shadow-md">
+                    class="h-16 w-full bg-white rounded-full pl-4 text-xl flex items-center justify-center relative cursor-pointer shadow-md">
                     سال انتشار
-                    <img class="absolute left-8 top-0 bottom-0 my-auto h-5 pt-1" src="/icons/books/down.svg" alt="down">
+                    <img class="absolute left-4 top-0 bottom-0 my-auto h-[1.125rem] pt-1" src="/icons/books/down.svg" alt="down">
                 </div>
             </div>
             <div class="flex-1">
                 <div
-                    class="h-16 w-full bg-white rounded-full focus:outline-none px-8 text-xl flex items-center justify-center relative cursor-pointer shadow-md">
+                    class="h-16 w-full bg-white rounded-full text-xl flex items-center justify-center relative cursor-pointer shadow-md">
                     پر امتیاز ترین
                 </div>
             </div>
         </div>
 
-        <div class="mt-16 space-y-8">
+        <div class="mt-12 space-y-8">
             <BooksBook url="/images/books/book1.png" title="درمان اختلالات ریاضی" subject="ریاضی"
                 age="سنین 12 تا 18 سال" summary="درمان اختلالات ریاضی کتابی است از دکتر  که مولفان آن را" name="دکتر مصطفی تبریزی" star="4.8">
             </BooksBook>
