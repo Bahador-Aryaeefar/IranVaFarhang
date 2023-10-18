@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div  class="max-w-[60rem] mx-auto">
         <div
             class="bg-white rounded-full shadow-md flex items-center justify-center text-black text-[1.75rem] font-bold h-16">
             اقدام پژوهی
@@ -117,7 +117,7 @@
                     </div>
                 </div>
 
-                ثبت اقدام پژوهی جدید
+                <!-- ثبت اقدام پژوهی جدید -->
             </div>
         </div>
     </div>

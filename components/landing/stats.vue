@@ -128,9 +128,15 @@
             </div>
 
             <div class="h-16 rounded-full bg-white flex p-2 mt-4 shadow-md">
-                <div class="cursor-pointer rounded-full w-1/2 h-full flex items-center justify-center text-2xl text-[#434343]">استان</div>
-                <div class="cursor-pointer rounded-full bg-[#72DFDA] w-1/2 h-full flex items-center justify-center text-2xl text-white font-bold">کشور</div>
+                <div class="cursor-pointer rounded-full w-1/2 h-full flex items-center justify-center text-2xl" :class="isCity ? 'bg-[#72DFDA] text-white font-bold' : 'text-[#434343]'" @click="isCity = true">استان</div>
+                <div class="cursor-pointer rounded-full w-1/2 h-full flex items-center justify-center text-2xl" :class="!isCity ? 'bg-[#72DFDA] text-white font-bold' : 'text-[#434343]'" @click="isCity = false">کشور</div>
             </div>
         </div>
     </div>
 </template>
+
+<script setup>
+
+const isCity = ref(false)
+
+</script>

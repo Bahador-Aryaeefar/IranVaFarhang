@@ -1,11 +1,11 @@
 <template>
-    <div>
+    <div class="max-w-[50rem] mx-auto">
         <div
             class="bg-white rounded-full shadow-md flex items-center justify-center text-black text-[1.75rem] font-bold h-16">
             ثبت اقدام پژوهی جدید
         </div>
 
-        <div class="mt-20 text-[#707070] max-w-[50rem] mx-auto space-y-20">
+        <div class="mt-20 text-[#707070] space-y-20">
             <div>
                 <div class="text-2xl font-bold text-center">
                     نام اثر

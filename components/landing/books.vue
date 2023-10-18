@@ -16,13 +16,6 @@
             <LandingBookFrame class="shrink-0" :score="4.6" url="/images/landing/book3.png">این راهش نیست
             </LandingBookFrame>
             <LandingBookFrame class="shrink-0" :score="4.6" url="/images/landing/book4.png">وضعیت آخر</LandingBookFrame>
-            <LandingBookFrame class="shrink-0" :score="4.8" url="/images/landing/book1.png">درمان اختلالات ریاضی
-            </LandingBookFrame>
-            <LandingBookFrame class="shrink-0" :score="4.7" url="/images/landing/book2.png">شادترین کودک محله
-            </LandingBookFrame>
-            <LandingBookFrame class="shrink-0" :score="4.6" url="/images/landing/book3.png">این راهش نیست
-            </LandingBookFrame>
-            <LandingBookFrame class="shrink-0" :score="4.6" url="/images/landing/book4.png">وضعیت آخر</LandingBookFrame>
         </div>
     </div>
 </template>
