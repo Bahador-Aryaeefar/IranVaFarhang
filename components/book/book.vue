@@ -52,6 +52,15 @@
                 یک موضوع روانپزشکی به رسمیت شناخته شد.
             </p>
         </div>
+
+        <div class="mt-8 rounded-full h-16 bg-[#57C5C6] flex items-center justify-between px-6">
+            <div class="text-white font-bold text-2xl">
+                دانلود نسخه الکترونیک
+                <span class="font-normal text-xl">
+                    (pdf)
+                </span>
+            </div>
+        </div>
     </div>
 </template>
 
