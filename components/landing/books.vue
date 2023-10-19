@@ -9,7 +9,7 @@
 
         <div
             class="flex gap-5 mt-5 px-10 mobile:px-6 -mx-10 mobile:-mx-6 flex-wrap justify-center mobile:flex-nowrap mobile:justify-start mobile:overflow-auto hideScroll pb-10">
-            <LandingBookFrame class="shrink-0" :score="4.8" url="/images/landing/book1.png">درمان اختلالات ریاضی
+            <LandingBookFrame @click="navigateTo('/book')" class="shrink-0" :score="4.8" url="/images/landing/book1.png">درمان اختلالات ریاضی
             </LandingBookFrame>
             <LandingBookFrame class="shrink-0" :score="4.7" url="/images/landing/book2.png">شادترین کودک محله
             </LandingBookFrame>
