@@ -60,7 +60,135 @@
                     (pdf)
                 </span>
             </div>
+
+            <div class="flex items-center gap-2 text-white text-lg">
+                <span dir="ltr">12 MB</span>
+                <img class="h-8" src="/icons/book/download.svg" alt="download">
+            </div>
         </div>
+
+        <div
+            class="bg-white rounded-full px-10 py-3 flex items-center gap-3 mt-[6rem] w-fit mx-auto text-2xl text-[#808080]">
+            <img src="/icons/book/comment.svg" alt="comment" class="h-8">
+            نظرات کاربران
+        </div>
+
+        <div class="rounded-[3rem] border-[0.125rem] border-[#808080] px-6 py-4 mt-4">
+            <div class="flex justify-between gap-8">
+                <div
+                    class="bg-white rounded-full py-2 flex items-center justify-center gap-2 w-fit mx-auto text-xl text-[#88C406] grow">
+                    <img src="/icons/book/good.svg" alt="good" class="h-6">
+                    خوب
+                </div>
+
+                <div
+                    class="bg-white rounded-full py-2 flex items-center justify-center gap-2 w-fit mx-auto text-xl text-[#FFCB63] grow">
+                    <img src="/icons/book/mid.svg" alt="mid" class="h-6">
+                    متوسط
+                </div>
+
+                <div
+                    class="bg-white rounded-full py-2 flex items-center justify-center gap-2 w-fit mx-auto text-xl text-[#F50000] grow">
+                    <img src="/icons/book/bad.svg" alt="bad" class="h-6">
+                    ضعیف
+                </div>
+            </div>
+
+            <textarea
+                class="h-[8rem] min-h-20 w-full bg-white rounded-[2rem] focus:outline-none px-8 py-3 mt-4 placeholder:text-[#707070] text-[#000000] text-xl text-center shadow-md"
+                placeholder="نظر خود را ثبت کنید"></textarea>
+
+            <button class="rounded-full px-12 py-1 text-white text-2xl bg-[#88C406] mx-auto block mt-4">ثبت</button>
+        </div>
+
+        <ul class="mt-8 space-y-8">
+            <li class="flex rounded-[2rem] bg-white pl-6 pr-10 py-4">
+                <div>
+                    <div class="flex items-center gap-1 text-xl text-[#88C406] pr-2 shrink-0">
+                        <img class="h-6" src="/icons/book/good.svg" alt="good">
+                        <span class="shrink-0">خوب</span>
+                    </div>
+
+                    <div class="h-[0.125rem] rounded-r-full bg-[#8DC505] mt-2"></div>
+                </div>
+
+                <div class="grow text-center">
+                    <div class="text-xl text-[#707070]">
+                        آرین زرینی
+                    </div>
+
+                    <div class="h-[0.125rem] rounded-l-full bg-[#8DC505] mt-2"></div>
+
+                    <div class="text-xl text-[#707070] mt-1">
+                        کتاب خوبیه و مفاهیم رو خوب انتقال میدهه
+                    </div>
+
+                </div>
+
+                <div class="text-2xl text-[#757575] shrink-0 text-center mr-3">
+                    <img class="self-start h-16 cursor-pointer" src="/icons/profile/like.svg" alt="like">
+                    <div class="-mt-4">3</div>
+                </div>
+            </li>
+
+            <li class="flex rounded-[2rem] bg-white pl-6 pr-10 py-4">
+                <div>
+                    <div class="flex items-center gap-1 text-xl text-[#FFCB63] pr-2 shrink-0">
+                        <img class="h-6" src="/icons/book/mid.svg" alt="mid">
+                        <span class="shrink-0">متوسط</span>
+                    </div>
+
+                    <div class="h-[0.125rem] rounded-r-full bg-[#FFCB63] mt-2"></div>
+                </div>
+
+                <div class="grow text-center">
+                    <div class="text-xl text-[#707070]">
+                        احمدرضا فرخی
+                    </div>
+
+                    <div class="h-[0.125rem] rounded-l-full bg-[#FFCB63] mt-2"></div>
+
+                    <div class="text-xl text-[#707070] mt-1">
+                        معمولی بود . توقع بیشتری داشتم
+                    </div>
+
+                </div>
+
+                <div class="text-2xl text-[#757575] shrink-0 text-center mr-3">
+                    <img class="self-start h-16 cursor-pointer" src="/icons/profile/like.svg" alt="like">
+                    <div class="-mt-4">1</div>
+                </div>
+            </li>
+
+            <li class="flex rounded-[2rem] bg-white pl-6 pr-10 py-4">
+                <div>
+                    <div class="flex items-center gap-1 text-xl text-[#F50000] pr-2 shrink-0">
+                        <img class="h-6" src="/icons/book/bad.svg" alt="bad">
+                        <span class="shrink-0">ضعیف</span>
+                    </div>
+
+                    <div class="h-[0.125rem] rounded-r-full bg-[#F50000] mt-2"></div>
+                </div>
+
+                <div class="grow text-center">
+                    <div class="text-xl text-[#707070]">
+                        علیرضا نصیرمنش
+                    </div>
+
+                    <div class="h-[0.125rem] rounded-l-full bg-[#F50000] mt-2"></div>
+
+                    <div class="text-xl text-[#707070] mt-1">
+                        سطح مطالب بالا نبود
+                    </div>
+
+                </div>
+
+                <div class="text-2xl text-[#757575] shrink-0 text-center mr-3">
+                    <img class="self-start h-16 cursor-pointer" src="/icons/profile/like.svg" alt="like">
+                    <div class="-mt-4">2</div>
+                </div>
+            </li>
+        </ul>
     </div>
 </template>
 
