@@ -16,8 +16,10 @@ definePageMeta({
 
 const auth = useAuth()
 
-auth.login({
-    // email: "test@me.com",
-    // password: "test"
-})
+// auth.login({
+//     email: "test@me.com",
+//     password: "test",
+//     name: "test",
+//     gender: "male"
+// })
 </script>

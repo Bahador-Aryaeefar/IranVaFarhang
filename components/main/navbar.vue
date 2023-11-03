@@ -7,10 +7,10 @@
                 <div class="w-2.5 h-2.5 rounded-full bg-white"></div>
             </div>
 
-            <div v-if="false" class="flex items-center gap-3">
-                <span class="cursor-pointer hover:text-[#BCF5F1]">ورود</span>
+            <div v-if="true" class="flex items-center gap-3">
+                <NuxtLink to="auth" class="cursor-pointer hover:text-[#BCF5F1]">ورود</NuxtLink>
                 <div class="h-4 w-[0.125rem] bg-white rounded-full"></div>
-                <span class="cursor-pointer hover:text-[#BCF5F1]">ثبت نام</span>
+                <NuxtLink to="auth?type=s" class="cursor-pointer hover:text-[#BCF5F1]">ثبت نام</NuxtLink>
             </div>
 
             <div v-else class="cursor-pointer hover:text-[#BCF5F1]" @click="navigateTo('/profile')">محمدجواد صیادیان</div>

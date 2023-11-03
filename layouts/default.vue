@@ -1,6 +1,5 @@
 <template>
-    <div dir="rtl" class="font-Yekan pb-[30rem] max-w-[100rem] mx-auto">
-        <MainNavbar></MainNavbar>
+    <div dir="rtl" class="font-Yekan max-w-[100rem] mx-auto">
         <slot />
 
         <div v-if="toast.showError.value"
