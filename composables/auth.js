@@ -1,5 +1,6 @@
 export const useAuth = () => {
     const router = useRouter()
+    const cookie = useCookie('token')
     const toast = useToast()
 
     const login = async (req) => {
@@ -19,13 +20,16 @@ export const useAuth = () => {
             onResponse({ request, response, options }) {
                 // Process the response data    return response._data
                 console.log(response)
+                if (response.status == 200 || response.status == 201) {
+                    cookie.value = response._data.data.token
+                    navigateTo('/')
+                }
             },
             onResponseError({ request, response, options }) {
                 // Handle the response errors 
-                console.log(response._data)
-                toast.addError("Login: " + message)
+                toast.addError("Login: " + response._data.data)
             },
-            initialCache: false
+            initialCache: false,
         })
     }
 
@@ -46,16 +50,48 @@ export const useAuth = () => {
             onResponse({ request, response, options }) {
                 // Process the response data    return response._data
                 console.log(response)
-                console.log("200")
+                if (response.status == 200 || response.status == 201) {
+                    cookie.value = response._data.token
+                    navigateTo('/')
+                }
             },
             onResponseError({ request, response, options }) {
                 // Handle the response errors 
-                console.log(response._data)
-                toast.addError("Register: " + message)
+                toast.addError("Register: " + response._data.data)
             },
             initialCache: false
         })
     }
-    
-    return { login, register }
+
+    const registerTeacher = async (req) => {
+        await useFetch('https://api.37pajoohesh.ir/api/registerTeacher', {
+            onRequest({ request, options }) {
+                console.log('register teacher')
+                options.headers = {
+                    "Accept": "application/json"
+                }
+                options.method = 'POST'
+                options.body = req
+            },
+            onRequestError({ request, options, error, response }) {
+                // Handle the request errors
+                toast.addError("RegisterTeacher: " + error)
+            },
+            onResponse({ request, response, options }) {
+                // Process the response data    return response._data
+                console.log(response)
+                if (response.status == 200 || response.status == 201) {
+                    cookie.value = response._data.token
+                    navigateTo('/')
+                }
+            },
+            onResponseError({ request, response, options }) {
+                // Handle the response errors 
+                toast.addError("RegisterTeacher: " + response._data.data)
+            },
+            initialCache: false
+        })
+    }
+
+    return { login, register, registerTeacher }
 }
