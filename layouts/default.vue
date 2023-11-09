@@ -41,9 +41,11 @@
 <script setup>
 useHead({
     bodyAttrs: {
-        class: 'bg-[#F5F6FA]'
+        class: 'bg-[#57C5C6]'
     }
 })
+
+// bg-[#00000040]
 
 const toast = useToast()
 </script>

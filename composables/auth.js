@@ -3,6 +3,13 @@ export const useAuth = () => {
     const cookie = useCookie('token')
     const toast = useToast()
 
+    const isLogin = () => {
+        if (cookie.value != null) {
+            return true
+        }
+        return false
+    }
+
     const login = async (req) => {
         await useFetch('https://api.37pajoohesh.ir/api/login', {
             onRequest({ request, options }) {
@@ -93,5 +100,11 @@ export const useAuth = () => {
         })
     }
 
-    return { login, register, registerTeacher }
+    const logout = () => {
+        console.log('logout')
+        cookie.value = null
+        navigateTo('/auth')
+    }
+
+    return { login, register, registerTeacher, isLogin, logout }
 }

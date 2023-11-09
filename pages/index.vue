@@ -11,7 +11,7 @@
 <script setup>
 definePageMeta({
     layout: 'main',
-    // middleware: ["auth"]
+    middleware: ["auth"]
 })
 
 const auth = useAuth()

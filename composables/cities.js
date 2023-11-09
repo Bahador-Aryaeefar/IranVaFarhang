@@ -1,5 +1,4 @@
 export const useCities = () => {
-    const router = useRouter()
     const cities = useState('cities', () => null)
     const provinces = useState('provinces', () => null)
     const toast = useToast()
@@ -21,10 +20,10 @@ export const useCities = () => {
             onResponse({ request, response, options }) {
                 // Process the response data    return response._data
                 console.log(response)
-                cities.value = response._data.filter(x => x.parent > 0)
-                provinces.value = response._data.filter(x => x.parent == 0)
-                console.log(cities.value);
-                console.log(provinces.value);
+                if (response.status == 200 || response.status == 201) {
+                    cities.value = response._data.filter(x => x.parent > 0)
+                    provinces.value = response._data.filter(x => x.parent == 0)
+                }
             },
             onResponseError({ request, response, options }) {
                 // Handle the response errors 
@@ -34,6 +33,6 @@ export const useCities = () => {
             initialCache: false
         })
     }
-    
+
     return { getCities, cities, provinces }
 }

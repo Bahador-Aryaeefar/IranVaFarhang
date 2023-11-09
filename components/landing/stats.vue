@@ -1,28 +1,28 @@
 <template>
     <div class="">
         <div class="bg-white rounded-[2rem] shadow-md pt-8 pb-8 max-w-[60rem] mx-auto">
-            <div class="text-[2rem] font-bold text-[#2D2D2D] text-center">20,037</div>
+            <div class="text-[2rem] font-bold text-[#2D2D2D] text-center">{{works.lineCount.value ? works.lineCount.value.all : '-'}}</div>
             <div class="text-[1.75rem] text-[#2B2B2B] text-center">تعداد آثار</div>
 
             <div class="w-[80%] h-[0.125rem] bg-[#26C3C2] rounded-full mt-8 mx-auto"></div>
 
             <div class="flex items-center mt-12 text-center w-[90%] mx-auto">
                 <div class="w-1/3">
-                    <div class="text-2xl text-[#2D2D2D] font-bold">3075</div>
+                    <div class="text-2xl text-[#2D2D2D] font-bold">{{works.lineCount.value ? works.lineCount.value.books : '-'}}</div>
                     <div class="text-lg text-[#2B2B2B]">کتاب ها</div>
                 </div>
 
                 <div class="h-10 w-[0.125rem] bg-[#26C3C2] rounded-full"></div>
 
                 <div class="w-1/3">
-                    <div class="text-2xl text-[#2D2D2D] font-bold">12042</div>
+                    <div class="text-2xl text-[#2D2D2D] font-bold">{{works.lineCount.value ? works.lineCount.value.articles : '-'}}</div>
                     <div class="text-lg text-[#2B2B2B]">مقالات</div>
                 </div>
 
                 <div class="h-10 w-[0.125rem] bg-[#26C3C2] rounded-full"></div>
 
                 <div class="w-1/3">
-                    <div class="text-2xl text-[#2D2D2D] font-bold">5020</div>
+                    <div class="text-2xl text-[#2D2D2D] font-bold">{{works.lineCount.value ? works.lineCount.value.experiences : '-'}}</div>
                     <div class="text-lg text-[#2B2B2B]">تجربه های برتر</div>
                 </div>
             </div>
@@ -136,7 +136,7 @@
 </template>
 
 <script setup>
-
 const isCity = ref(false)
-
+const works = useWorks()
+works.getCount()
 </script>

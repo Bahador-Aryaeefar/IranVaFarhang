@@ -1,7 +1,10 @@
 <template>
-    <div dir="rtl" class="font-Yekan pb-[30rem] max-w-[100rem] mx-auto">
+    <div dir="rtl" class="font-Yekan pb-[30rem] ">
         <MainNavbar></MainNavbar>
-        <slot />
+
+        <div class="max-w-[100rem] mx-auto">
+            <slot />
+        </div>
 
         <div v-if="toast.showError.value"
             class="fixed px-4 left-0 top-0 w-full h-full bg-[#0000004D] backdrop-blur-[0.125rem] z-[200] flex items-center justify-center pb-20 break-words"

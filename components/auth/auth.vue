@@ -1,6 +1,6 @@
 <template>
-    <div class="fixed left-0 top-0 w-[100vw] h-[100vh] bg-[#00000040] z-[10] flex break-words overflow-auto px-10">
-        <div class="w-[45rem] bg-white rounded-[1rem] py-6 px-10 m-auto">
+    <div class="fixed left-0 top-0 w-[100vw] h-[100vh] z-[10] flex break-words overflow-auto px-10">
+        <div class="w-[42rem] bg-white rounded-[1rem] py-6 px-10 m-auto">
             <h1 class="text-[2rem] font-bold leading-[3.5rem] text-[#57C5C6] text-center">
                 {{ !isLogin ? "ثبت نام" : "ورود" }}
             </h1>
@@ -96,7 +96,7 @@
             </form>
 
             <div @click="getAuth"
-                class="flex items-center justify-center h-14 mt-4 rounded-full bg-[#57C5C6] cursor-pointer gap-2 text-white text-xl">
+                class="flex items-center justify-center mx-auto h-14 mt-4 rounded-full bg-[#57C5C6] cursor-pointer gap-2 text-white text-xl">
                 <img class="w-6" :src="`/icons/auth/${isLogin ? 'login-a' : 'register'}.svg`" alt="login">
                 {{ isLogin ? "ورود" : "ثبت نام" }}
             </div>
