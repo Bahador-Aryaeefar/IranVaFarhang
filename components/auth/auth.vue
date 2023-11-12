@@ -212,7 +212,7 @@ const registerTeacher = () => {
     if (!email.value) isValid = false
     if (!name.value) isValid = false
     if (!lastName.value) isValid = false
-    if (!genderID.value) isValid = false
+    if (genderID.value == null) isValid = false
     if (!provinceID.value) isValid = false
     if (!cityID.value) isValid = false
     if (!mobile.value) isValid = false

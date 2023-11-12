@@ -5,7 +5,7 @@
             تاریخچه رویداد ها
         </div>
 
-        <div class="w-full shadow-md rounded-[2rem] overflow-hidden relative font-bold cursor-pointer group mx-auto mt-8" @click="navigateTo('/projects/research')"
+        <div v-if="false" class="w-full shadow-md rounded-[2rem] overflow-hidden relative font-bold cursor-pointer group mx-auto mt-8" @click="navigateTo('/projects/research')"
             style="background-image: url(''); container-type: inline-size;">
             <img class="w-full group-hover:scale-[104%] transition-all duration-500" src="/images/projects/research.png"
                 alt="projects">
@@ -15,17 +15,17 @@
             </span>
         </div>
 
-        <div class="w-full shadow-md rounded-[2rem] overflow-hidden relative font-bold cursor-pointer group mx-auto mt-8"
+        <NuxtLink to="/projects/research" class="block w-full shadow-md rounded-[2rem] overflow-hidden relative font-bold cursor-pointer group mx-auto mt-8"
             style="background-image: url(''); container-type: inline-size;">
             <img class="w-full group-hover:scale-[104%] transition-all duration-500" src="/images/projects/books.png"
                 alt="projects">
             <span class="text-black absolute left-[10%] top-0 bottom-0 my-auto text-[5cqw] h-fit">
-                همایش
+                آثار
                 <span class="text-[3.5cqw] font-normal">(3)</span>
             </span>
-        </div>
+        </NuxtLink>
 
-        <div class="w-full shadow-md rounded-[2rem] overflow-hidden relative font-bold cursor-pointer group mx-auto mt-8"
+        <div v-if="false" class="w-full shadow-md rounded-[2rem] overflow-hidden relative font-bold cursor-pointer group mx-auto mt-8"
             style="background-image: url(''); container-type: inline-size;">
             <img class="w-full group-hover:scale-[104%] transition-all duration-500" src="/images/projects/best.png"
                 alt="projects">

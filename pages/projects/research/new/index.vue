@@ -1,6 +1,6 @@
 <template>
     <div class="mx-10 mobile:mx-6">
-        <ProjectsNew class="mt-8"></ProjectsNew>
+        <ProjectsNewResearch class="mt-8"></ProjectsNewResearch>
     </div>
 </template>
 

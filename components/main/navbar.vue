@@ -26,4 +26,7 @@
 
 <script setup>
 const auth = useAuth()
+const user = useUser()
+
+user.getUser()
 </script>

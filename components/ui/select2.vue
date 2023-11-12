@@ -1,20 +1,20 @@
 <template>
     <div @click.stop="isOpen = !isOpen" @focusout="blurInput"
-        class="text-lg flex justify-between items-center relative cursor-pointer group" tabindex="0">
+        class="text-center text-xl flex justify-between items-center relative cursor-pointer group" tabindex="0">
         <input @click.stop="isOpen = true" @blur="blurInput" v-model="selectInput" @input.prevent="inputValue"
             :placeholder="placeHolder" :disabled="!isInput"
-            class="h-14 bg-white focus:outline-none w-full placeholder:text-[#A69F9B] text-[#1C0E07] border-[0.125rem] rounded-full px-6"
+            class="shadow-md text-center h-14 bg-white focus:outline-none w-full placeholder:text-[#707070] text-[#000000] border-[0.125rem] rounded-full px-6"
             :class="((isInput) ? '' : 'pointer-events-none') + ((isOpen) ? ' border-[#57C5C6]' : ((error) ? ' border-[#EE0035]' : ' border-[#E1E2E4] group-hover:border-[#57C5C6]')) + ' ' + inputBorder"
             type="text">
 
         <img class="absolute left-4 transition-all duration-[250ms] pointer-events-none w-6 mt-1"
             :class="(isOpen) ? 'rotate-180' : ''" src="/icons/ui/down.svg" alt="down">
         <ul v-if="isOpen && options[0]" tabindex="0" @click.stop=""
-            class="select z-[2] max-h-[21rem] rounded-[0.5rem] overflow-auto overflow-x-hidden bg-white FirefoxScroll absolute top-[4rem] left-0 w-full border-[#E1E2E4] border-[0.125rem]">
+            class="shadow-md select z-[2] max-h-[21rem] rounded-[1rem] overflow-auto overflow-x-hidden bg-white FirefoxScroll absolute top-[4rem] left-0 w-full border-[#E1E2E4] border-[0.125rem]">
             <template v-for="(item, index) in options">
                 <hr v-if="index" class="border-0 border-t-[0.125rem] border-[#E1E2E4] mx-2">
                 <li @click="pick(item)"
-                    class="py-2 hover:bg-[#FAFAFA] rounded-[0.5rem] px-4 text-[#1C0E07] cursor-pointer">{{ item }}
+                    class="py-3 hover:bg-[#FAFAFA] rounded-[1rem] px-4 text-[#1C0E07] cursor-pointer">{{ item }}
                 </li>
             </template>
         </ul>
