@@ -34,5 +34,13 @@ export const useCities = () => {
         })
     }
 
-    return { getCities, cities, provinces }
+    const searchCity = (id) => {
+        return cities?.value?.filter(x => x.id == id)[0]
+    }
+
+    const searchProvince = (id) => {
+        return provinces?.value?.filter(x => x.id == id)[0]
+    }
+
+    return { getCities, cities, provinces, searchCity, searchProvince }
 }

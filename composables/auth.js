@@ -2,6 +2,7 @@ export const useAuth = () => {
     const router = useRouter()
     const cookie = useCookie('token')
     const toast = useToast()
+    const user = useUser()
 
     const isLogin = () => {
         if (cookie.value != null) {
@@ -103,6 +104,7 @@ export const useAuth = () => {
     const logout = () => {
         console.log('logout')
         cookie.value = null
+        user.user.value = null
         navigateTo('/auth')
     }
 

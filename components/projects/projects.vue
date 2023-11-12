@@ -21,7 +21,6 @@
                 alt="projects">
             <span class="text-black absolute left-[10%] top-0 bottom-0 my-auto text-[5cqw] h-fit">
                 آثار
-                <span class="text-[3.5cqw] font-normal">(3)</span>
             </span>
         </NuxtLink>
 

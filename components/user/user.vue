@@ -4,22 +4,23 @@
 
         <div class="mt-8 flex items-end justify-between max-w-[35rem] mx-auto">
             <div class="text-center text-black font-bold text-2xl shrink-0">
-                <div class="mb-4 w-[7rem] h-[7rem] rounded-full mx-auto border-[0.125rem] border-white shadow-md bg-cover bg-center bg-[#1DA8A6]" :style="`background-image: url('https://api.37pajoohesh.ir/images/${user.profile_photo_path}');`"></div>
-                {{(user.name + ' ' + ((user.last_name) ? user.last_name : ''))}}
+                <img class="w-[7rem] rounded-full mx-auto border-[0.125rem] border-white shadow-md"
+                    src="/images/profile/pro.png" alt="profile">
+                {{ id }}
             </div>
 
             <div>
                 <div class="flex gap-2 text-center px-4">
                     <div class="w-[6.25rem]">
-                        <div class="text-[#2D2D2D] font-bold text-2xl">-</div>
+                        <div class="text-[#2D2D2D] font-bold text-2xl">98</div>
                         <div class="text-black text-lg mt-1">دنبال کننده</div>
                     </div>
                     <div class="w-[6.25rem]">
-                        <div class="text-[#2D2D2D] font-bold text-2xl">-</div>
+                        <div class="text-[#2D2D2D] font-bold text-2xl">17</div>
                         <div class="text-black text-lg mt-1">تعداد آثار</div>
                     </div>
                     <div class="w-[6.25rem]">
-                        <div class="text-[#2D2D2D] font-bold text-2xl">-</div>
+                        <div class="text-[#2D2D2D] font-bold text-2xl">{{ score }}</div>
                         <div class="h-5 w-[6.25rem] mt-2"
                             :style="`background: linear-gradient(90deg, #ffb400 ${score / 5 * 100}%, #e1e1e1 ${score / 5 * 100}%); mask-image: url('/icons/profile/star.svg'); -webkit-mask-image: url('/icons/profile/star.svg'); mask-size: 1.25rem; -webkit-mask-size: 1.25rem;`">
                         </div>
@@ -69,7 +70,7 @@
                     </li>
                     <li class="flex gap-2">
                         <div class="w-3 h-3 rounded-full bg-[#1DA8A6] mt-2 shrink-0"></div>
-                        {{cities.searchProvince(user.province_id)?.title + ' - ' + cities.searchCity(user.city_id)?.title}}
+                        کرمانشاه
                     </li>
                 </ul>
 
@@ -127,13 +128,12 @@
             </div>
 
             <div class="mt-12 space-y-8">
-                <ProfileBook url="/images/books/book1.png" title="درمان اختلالات ریاضی" subject="ریاضی"
-                    age="سنین 12 تا 18 سال" summary="درمان اختلالات ریاضی کتابی است از دکتر  که مولفان آن را"
-                    name="دکتر مصطفی تبریزی" star="4.8">
-                </ProfileBook>
-                <ProfileBook url="/images/books/book2.png" title="تولد دوباره زمان" subject="فیزیک" age="تمام سنین"
+                <UserBook url="/images/books/book1.png" title="درمان اختلالات ریاضی" subject="ریاضی" age="سنین 12 تا 18 سال"
+                    summary="درمان اختلالات ریاضی کتابی است از دکتر  که مولفان آن را" name="دکتر مصطفی تبریزی" star="4.8">
+                </UserBook>
+                <UserBook url="/images/books/book2.png" title="تولد دوباره زمان" subject="فیزیک" age="تمام سنین"
                     summary="در این کتاب سعی به عمل آمده که شرح کلی از روابط اعداد" name="دکتر مصطفی تبریزی" star="3.9">
-                </ProfileBook>
+                </UserBook>
             </div>
         </div>
 
@@ -142,15 +142,15 @@
             <div class="mt-6 h-[0.125rem] rounded-full bg-[#21C2C0]"></div>
 
             <div class="mt-12 space-y-12">
-                <ProfileTop class="w-full" color="bg-[#FFC105]" profile="/images/profile/first.png"
+                <UserTop class="w-full" color="bg-[#FFC105]" profile="/images/profile/first.png"
                     eye="/icons/landing/first.png" name="درمان اختلالات ریاضی" title="مقام نخست اقدام پژوهی کشور"
-                    year="1401"></ProfileTop>
-                <ProfileTop class="w-full" color="bg-[#D2D2D2]" profile="/images/profile/second.png"
+                    year="1401"></UserTop>
+                <UserTop class="w-full" color="bg-[#D2D2D2]" profile="/images/profile/second.png"
                     eye="/icons/landing/second.png" name="تولد دوباره زمان" title="مقام دوم اقدام پژوهی استان کرمانشاه"
-                    year="1400"></ProfileTop>
-                <ProfileTop class="w-full" color="bg-[#D66E40]" profile="/images/profile/third.png"
+                    year="1400"></UserTop>
+                <UserTop class="w-full" color="bg-[#D66E40]" profile="/images/profile/third.png"
                     eye="/icons/landing/third.png" name="استدلال استنتاجی" title="مقام سوم اقدام پژوهی استان کرمانشاه"
-                    year="1399"></ProfileTop>
+                    year="1399"></UserTop>
             </div>
         </div>
     </div>
@@ -158,47 +158,11 @@
 
 <script setup>
 
-const score = ref(5)
-const cities = useCities()
-
-if(cities.cities.value == null) {
-    cities.getCities()
-}
+const { id } = useRoute().params
+const score = ref(3.6)
 
 const myState = ref(1)
 const bookState = ref(1)
-const {user} = useUser()
 
-// {
-//     "id": 20,
-//     "name": "dabir",
-//     "last_name": null,
-//     "national_code": null,
-//     "personal_code": null,
-//     "tell": null,
-//     "mobile": null,
-//     "work_experience": null,
-//     "degree_education": null,
-//     "discipline": null,
-//     "current_position": null,
-//     "province_id": null,
-//     "city_id": null,
-//     "status": null,
-//     "profile_photo_path": null,
-//     "presenter": 0,
-//     "judge_province": 0,
-//     "judge_another_province": 0,
-//     "maneger": 0,
-//     "gender": 0,
-//     "telegram": null,
-//     "instagram": null,
-//     "eita": null,
-//     "rubika": null,
-//     "email": "dabir@dabir.com",
-//     "email_verified_at": null,
-//     "created_date": "1402/08/21",
-//     "created_at": "2023-11-12T08:48:20.000000Z",
-//     "updated_at": "2023-11-12T08:48:20.000000Z"
-// }
 
 </script>

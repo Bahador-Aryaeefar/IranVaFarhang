@@ -9,7 +9,7 @@
                 </div>
 
                 <div class="flex items-center gap-3">
-                    <NuxtLink v-if="auth.isLogin()" to="/profile" class="hover:text-[#BCF5F1]">getUser</NuxtLink>
+                    <NuxtLink v-if="auth.isLogin()" to="/profile" class="hover:text-[#BCF5F1]">{{user.user.value ? (user.user.value.name + ' ' + ((user.user.value.last_name) ? user.user.value.last_name : '')) : '-'}}</NuxtLink>
                     <NuxtLink v-else to="auth" class="cursor-pointer hover:text-[#BCF5F1]">ورود</NuxtLink>
                     <div class="h-4 w-[0.125rem] bg-white rounded-full"></div>
                     <div @click="auth.logout()" v-if="auth.isLogin()" class="cursor-pointer hover:text-[#BCF5F1]">خروج</div>

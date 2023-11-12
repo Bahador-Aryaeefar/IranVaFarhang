@@ -1,4 +1,4 @@
-export const useUser = () => {
+export const useResearch = () => {
     const cookie = useCookie('token')
     const toast = useToast()
     const research = useState('research', () => null)
