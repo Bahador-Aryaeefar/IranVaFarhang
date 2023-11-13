@@ -8,12 +8,12 @@
             </div>
 
             <div class="flex items-center gap-2 text-2xl font-bold text-[#2D2D2D]">
-                17
+                -
                 <img class="h-10" src="/icons/books/pen.svg" alt="pen">
             </div>
         </div>
 
-        <img class="mt-8 rounded-[2rem] shadow-md mx-auto w-full max-w-[20rem]" src="/images/books/book1.png" alt="book 1">
+        <img class="mt-8 rounded-[2rem] shadow-md mx-auto w-full max-w-[20rem]" :src="`https://api.37pajoohesh.ir/images/${book.file_image}`" alt="book 1">
 
         <div class="mt-8 flex px-4 justify-between items-center">
             <div class="h-10 w-[12.5rem] mt-2" :style="`background: linear-gradient(90deg, #ffb400 ${score / 5 * 100}%, #e1e1e1 ${score / 5 * 100}%); mask-image: url('/icons/profile/star.svg'); -webkit-mask-image: url('/icons/profile/star.svg'); 
