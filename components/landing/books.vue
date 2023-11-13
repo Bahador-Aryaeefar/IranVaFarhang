@@ -9,7 +9,7 @@
 
         <div
             class="flex gap-5 mt-5 px-10 mobile:px-6 -mx-10 mobile:-mx-6 flex-wrap justify-center mobile:flex-nowrap mobile:justify-start mobile:overflow-auto hideScroll pb-10">
-            <LandingBookFrame v-for="(item,index) in works.mostBooks.value" :to="`/books/${item.id}`" class="shrink-0" :score="item.score" :url="`https://api.37pajoohesh.ir/images/${item.file_image}`">{{ item.name }}</LandingBookFrame>
+            <LandingBookFrame v-for="(item,index) in works.mostBooks.value" :to="`/books/${item.id}`" class="shrink-0" :score="item.status" :url="`https://api.37pajoohesh.ir/images/${item.file_image}`">{{ item.name }}</LandingBookFrame>
         </div>
     </div>
 </template>

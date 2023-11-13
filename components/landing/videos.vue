@@ -9,8 +9,12 @@
 
         <div
             class="flex gap-5 mt-5 px-10 mobile:px-6 -mx-10 mobile:-mx-6 flex-wrap justify-center mobile:flex-nowrap mobile:justify-start mobile:overflow-auto hideScroll pb-10">
-            <LandingVideoFrame :score="4.7" url="/images/landing/video1.png">تجربه آموزش مثلثات با استفاده از اشکال</LandingVideoFrame>
-            <LandingVideoFrame :score="4.6" url="/images/landing/video2.png" color="2">آموزش الهی نامه پایه دهم</LandingVideoFrame>
+            <LandingVideoFrame v-for="item in works?.mostExperiences?.value" :url="`https://api.37pajoohesh.ir/images/${item.file_image}`" :to="`/books/${item.id}`" :score="item.status">{{item.name}}</LandingVideoFrame>
         </div>
     </div>
 </template>
+
+<script setup>
+const works = useWorks()
+works.getMostExperiences()
+</script>

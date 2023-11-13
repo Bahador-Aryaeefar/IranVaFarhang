@@ -1,8 +1,8 @@
 <template>
-    <div class="p-4 rounded-[1rem] bg-white shadow-md text-[#2B2B2B] cursor-pointer group">
-        <div class="w-[26.25rem] h-[15.1875em] rounded-[1rem] overflow-hidden flex items-center justify-center relative">
-            <img class="w-full h-full absolute left-0 top-0 group-hover:scale-[108%] transition-all duration-500" :src="url" alt="video">
-            <img class="w-16 h-16 z-[1]" :src="`/icons/landing/play${color}.svg`" alt="play">
+    <NuxtLink class="p-4 rounded-[1rem] bg-white shadow-md text-[#2B2B2B] cursor-pointer group">
+        <div :style="`background-image: url('${url}');`" class="group-hover:scale-[108%] transition-all duration-500 bg-contain bg-no-repeat bg-center w-[26.25rem] h-[15.1875em] rounded-[1rem] overflow-hidden flex items-center justify-center relative">
+            <!-- <img class="w-full absolute left-0 top-0 group-hover:scale-[108%] transition-all duration-500" :src="" alt="video"> -->
+            <!-- <img class="w-16 h-16 z-[1]" :src="`/icons/landing/play${color}.svg`" alt="play"> -->
         </div>
 
         <div class="mt-3 text-[1.3rem] text-center">
@@ -15,7 +15,7 @@
             {{score}}
             <img class="w-8 mb-1" src="/icons/landing/star.svg" alt="star">
         </div>
-    </div>
+    </NuxtLink>
 </template>
 
 <script setup>

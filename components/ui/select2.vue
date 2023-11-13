@@ -78,7 +78,7 @@ watch(() => props.value, (newvalue, oldvalue) => {
 
 /* width */
 ::-webkit-scrollbar {
-    width: 0.188rem;
+    width: 0.5rem;
     height: 0;
 }
 
@@ -94,13 +94,13 @@ watch(() => props.value, (newvalue, oldvalue) => {
 }
 
 ::-webkit-scrollbar-button:end:increment {
-    height: 0.2rem;
+    height: 1rem;
     display: block;
     background: transparent;
 }
 
 ::-webkit-scrollbar-button:start:increment {
-    height: 0.2rem;
+    height: 1rem;
     display: block;
     background: transparent;
 }

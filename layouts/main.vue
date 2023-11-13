@@ -60,7 +60,7 @@ body {
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 3000px) {
     html {
         font-size: 14px;
     }

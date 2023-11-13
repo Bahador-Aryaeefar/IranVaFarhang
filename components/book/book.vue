@@ -4,16 +4,16 @@
             <div class="flex items-center gap-4 text-2xl text-[#212121] font-bold">
                 <img class="w-[7rem] rounded-full border-[0.125rem] border-white shadow-md -my-4"
                     src="/images/landing/pro1.png" alt="profile">
-                {{id}}
+                {{author?.data.name}} {{ author?.data.last_name }}
             </div>
 
             <div class="flex items-center gap-2 text-2xl font-bold text-[#2D2D2D]">
-                -
+                {{author?.effects}}
                 <img class="h-10" src="/icons/books/pen.svg" alt="pen">
             </div>
         </div>
 
-        <img class="mt-8 rounded-[2rem] shadow-md mx-auto w-full max-w-[20rem]" :src="`https://api.37pajoohesh.ir/images/${book.file_image}`" alt="book 1">
+        <img class="mt-8 rounded-[2rem] shadow-md mx-auto w-full max-w-[20rem]" :src="`https://api.37pajoohesh.ir/images/${book?.file_image}`" alt="book 1">
 
         <div class="mt-8 flex px-4 justify-between items-center">
             <div class="h-10 w-[12.5rem] mt-2" :style="`background: linear-gradient(90deg, #ffb400 ${score / 5 * 100}%, #e1e1e1 ${score / 5 * 100}%); mask-image: url('/icons/profile/star.svg'); -webkit-mask-image: url('/icons/profile/star.svg'); 
@@ -50,7 +50,7 @@
             </p>
         </div>
 
-        <div class="mt-8 rounded-full h-16 bg-[#57C5C6] flex items-center justify-between px-6">
+        <a :href="`https://api.37pajoohesh.ir/images/${book?.file}`"  target="_blank" class="mt-8 rounded-full h-16 bg-[#57C5C6] flex items-center justify-between px-6">
             <div class="text-white font-bold text-2xl">
                 دانلود فایل
                 <span class="font-normal text-xl">
@@ -62,7 +62,7 @@
                 <span dir="ltr"></span>
                 <img class="h-8" src="/icons/book/download.svg" alt="download">
             </div>
-        </div>
+        </a>
 
         <div
             class="bg-white rounded-full px-10 py-3 flex items-center gap-3 mt-[6rem] w-fit mx-auto text-2xl text-[#808080]">
@@ -196,7 +196,7 @@ const book = computed(() => works?.book?.value)
 works.getBook(id)
 const score = computed(() => book?.value?.status)
 
-const user = ref(null)
+const author = computed(() => works.author?.value)
 
 
 

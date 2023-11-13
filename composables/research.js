@@ -22,6 +22,7 @@ export const useResearch = () => {
                 // Process the response data    return response._data
                 console.log(response)
                 if (response.status == 200 || response.status == 201) {
+                    navigateTo('/projects/research')
                 }
             },
             onResponseError({ request, response, options }) {
