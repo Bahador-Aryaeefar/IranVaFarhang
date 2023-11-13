@@ -4,7 +4,7 @@
             <div class="flex items-center gap-4 text-2xl text-[#212121] font-bold">
                 <img class="w-[7rem] rounded-full border-[0.125rem] border-white shadow-md -my-4"
                     src="/images/landing/pro1.png" alt="profile">
-                دکتر مصطفی تبریزی
+                {{id}}
             </div>
 
             <div class="flex items-center gap-2 text-2xl font-bold text-[#2D2D2D]">
@@ -32,7 +32,7 @@
             به دیگران پیشنهاد میکنید؟
 
             <div class="flex -ml-3 items-center text-[1.75rem]">
-                <span class="-ml-1">13</span>
+                <span class="-ml-1">{{book?.score}}</span>
                 <img class="h-16 cursor-pointer" src="/icons/profile/like.svg" alt="like">
             </div>
         </div>
@@ -46,23 +46,20 @@
             <div class="rounded-full h-[0.125rem] bg-[#35B9BE] mt-2"></div>
 
             <p class="text-justify text-xl text-[#3E3E3E] leading-[1.9rem] mt-3 pb-2">
-                اختلال ریاضی با ناتوانی در انجام محاسبات ریاضی و ترس از برخورد با ریاضیات و کتاب مشخص می شود. سندرم گرستمن،
-                اختلال محاسباتی، اختلال مادرزادی در حساب، نقص در حساب و اختلال رشد در حساب، همگی شرایط مرتبط با این اختلال
-                هستند. اختلال ریاضی تا قبل از سال 1980 به عنوان یک ناهنجاری روانپزشکی شناخته نشد، اما از آن به بعد به عنوان
-                یک موضوع روانپزشکی به رسمیت شناخته شد.
+                {{book?.description}}
             </p>
         </div>
 
         <div class="mt-8 rounded-full h-16 bg-[#57C5C6] flex items-center justify-between px-6">
             <div class="text-white font-bold text-2xl">
-                دانلود نسخه الکترونیک
+                دانلود فایل
                 <span class="font-normal text-xl">
-                    (pdf)
+                    
                 </span>
             </div>
 
             <div class="flex items-center gap-2 text-white text-lg">
-                <span dir="ltr">12 MB</span>
+                <span dir="ltr"></span>
                 <img class="h-8" src="/icons/book/download.svg" alt="download">
             </div>
         </div>
@@ -193,7 +190,14 @@
 </template>
 
 <script setup>
+const {id} = useRoute().params
+const works = useWorks()
+const book = computed(() => works?.book?.value)
+works.getBook(id)
+const score = computed(() => book?.value?.status)
 
-const score = ref(4.7)
+const user = ref(null)
+
+
 
 </script>

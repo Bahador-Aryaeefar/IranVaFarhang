@@ -1,6 +1,7 @@
 export const useWorks = () => {
     const lineCount = useState('lineCount', () => null)
     const mostBooks = useState('mostBooks', () => null)
+    const book = useState('book', () => null)
     const toast = useToast()
 
     const getCount = async (req) => {
@@ -60,6 +61,34 @@ export const useWorks = () => {
             initialCache: false
         })
     }
+
+    const getBook = async (id) => {
+        await useFetch(`https://api.37pajoohesh.ir/api/research/${id}`, {
+            onRequest({ request, options }) {
+                console.log('get book')
+                options.headers = {
+                    "Accept": "application/json"
+                }
+                options.method = 'GET'
+            },
+            onRequestError({ request, options, error, response }) {
+                // Handle the request errors
+                toast.addError("book: " + error)
+            },
+            onResponse({ request, response, options }) {
+                // Process the response data    return response._data
+                console.log(response)
+                if (response.status == 200 || response.status == 201) {
+                    book.value =  response._data
+                }
+            },
+            onResponseError({ request, response, options }) {
+                // Handle the response errors 
+                toast.addError("book: " + response._data.data)
+            },
+            initialCache: false
+        })
+    }
     
-    return { getCount, lineCount, getMostBooks, mostBooks }
+    return { getCount, lineCount, getMostBooks, mostBooks, book, getBook }
 }
