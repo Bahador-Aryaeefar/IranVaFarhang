@@ -1,6 +1,6 @@
 <template>
     <div class="bg-white rounded-[2rem] shadow-md flex items-center p-4 gap-4 relative">
-        <div class="w-[9.375rem] h-[12.25rem] rounded-[1rem] bg-cover shrink-0" :style="`background-image: url('${url}');`">
+        <div class="border-[0.15rem] w-[9.375rem] h-[12.25rem] rounded-[1rem] bg-contain bg-no-repeat bg-center shrink-0" :style="`background-image: url('${url}');`">
         </div>
 
         <div class="grow text-[#2D2D2D] self-stretch flex flex-col justify-between min-w-0">
@@ -17,7 +17,7 @@
                         <div class="truncate">{{ summary }}</div>
                     </div>
 
-                    <button class="py-1 px-4 rounded-[0.75rem] bg-[#F5F6FA] text-lg font-bold text-[#20BFBE]">بیشتر</button>
+                    <NuxtLink :to="`/books/${id}`" class="py-1 px-4 rounded-[0.75rem] bg-[#F5F6FA] text-lg font-bold text-[#20BFBE]">بیشتر</NuxtLink>
                 </div>
 
                 <div class="h-[0.125rem] bg-[#35C7C6] rounded-full mt-2"></div>
@@ -37,5 +37,5 @@
 </template>
 
 <script setup>
-const props = defineProps(['url', 'title', 'subject', 'age', 'summary', 'name', 'star'])
+const props = defineProps(['url', 'title', 'subject', 'age', 'summary', 'name', 'star', 'id'])
 </script>

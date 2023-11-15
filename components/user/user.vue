@@ -4,19 +4,19 @@
 
         <div class="mt-8 flex items-end justify-between max-w-[35rem] mx-auto">
             <div class="text-center text-black font-bold text-2xl shrink-0">
-                <img class="w-[7rem] rounded-full mx-auto border-[0.125rem] border-white shadow-md"
-                    src="/images/profile/pro.png" alt="profile">
-                {{ id }}
+                <div class="w-[7rem] h-[7rem] rounded-full mx-auto border-[0.25rem] border-[#1DA8A6] shadow-md bg-contain bg-center bg-white mb-4 bg-no-repeat"
+                    style="background-image: url('/images/profile/profile.png'); background-size: 70%;"></div>
+                {{ teacher?.data.name }} {{ teacher?.data.last_name }}
             </div>
 
             <div>
                 <div class="flex gap-2 text-center px-4">
                     <div class="w-[6.25rem]">
-                        <div class="text-[#2D2D2D] font-bold text-2xl">98</div>
+                        <div class="text-[#2D2D2D] font-bold text-2xl">-</div>
                         <div class="text-black text-lg mt-1">دنبال کننده</div>
                     </div>
                     <div class="w-[6.25rem]">
-                        <div class="text-[#2D2D2D] font-bold text-2xl">17</div>
+                        <div class="text-[#2D2D2D] font-bold text-2xl">{{ (teacher?.effects) ?  teacher?.effects : '-'}}</div>
                         <div class="text-black text-lg mt-1">تعداد آثار</div>
                     </div>
                     <div class="w-[6.25rem]">
@@ -114,25 +114,46 @@
             <div class="mt-6 h-[0.125rem] rounded-full bg-[#21C2C0]"></div>
             <div class="flex items-center gap-4 mt-6">
                 <button class="h-10 rounded-full w-full text-xl font-bold" @click="bookState = 1"
-                    :class="bookState == 1 ? 'bg-[#1DA8A6] text-white' : 'text-black'">کتاب (2)</button>
+                    :class="bookState == 1 ? 'bg-[#1DA8A6] text-white' : 'text-black'">کتاب
+                    ({{ teacher?.data?.researchs.filter(x => x.line_id == 1).length }})</button>
 
                 <div class="h-8 rounded-full w-[0.125rem] bg-[#21C2C0]"></div>
 
                 <button class="h-10 rounded-full w-full text-xl font-bold" @click="bookState = 2"
-                    :class="bookState == 2 ? 'bg-[#1DA8A6] text-white' : 'text-black'">مقاله (4)</button>
+                    :class="bookState == 2 ? 'bg-[#1DA8A6] text-white' : 'text-black'">مقاله
+                    ({{ teacher?.data?.researchs.filter(x => x.line_id == 2).length }})</button>
 
                 <div class="h-8 rounded-full w-[0.125rem] bg-[#21C2C0]"></div>
 
                 <button class="h-10 rounded-full w-full text-xl font-bold" @click="bookState = 3"
-                    :class="bookState == 3 ? 'bg-[#1DA8A6] text-white' : 'text-black'">تجربه برتر (1)</button>
+                    :class="bookState == 3 ? 'bg-[#1DA8A6] text-white' : 'text-black'">تجربه برتر
+                    ({{ teacher?.data?.researchs.filter(x => x.line_id == 3).length }})</button>
             </div>
 
-            <div class="mt-12 space-y-8">
-                <UserBook url="/images/books/book1.png" title="درمان اختلالات ریاضی" subject="ریاضی" age="سنین 12 تا 18 سال"
-                    summary="درمان اختلالات ریاضی کتابی است از دکتر  که مولفان آن را" name="دکتر مصطفی تبریزی" star="4.8">
+            <div v-if="bookState == 1" class="mt-12 space-y-8">
+                <UserBook v-for="item in teacher?.data?.researchs.filter(x => x.line_id == 1)"
+                    :url="`https://api.37pajoohesh.ir/images/${item.file_image}`" :title="item.name"
+                    :subject="categories[item.category_id - 1]" :age="item.ages" :summary="item.description"
+                    :name="teacher?.data.name + ((teacher?.data?.last_name) ? teacher?.data?.last_name : '')"
+                    :star="item.status" :id="item.id">
                 </UserBook>
-                <UserBook url="/images/books/book2.png" title="تولد دوباره زمان" subject="فیزیک" age="تمام سنین"
-                    summary="در این کتاب سعی به عمل آمده که شرح کلی از روابط اعداد" name="دکتر مصطفی تبریزی" star="3.9">
+            </div>
+
+            <div v-if="bookState == 2" class="mt-12 space-y-8">
+                <UserBook v-for="item in teacher?.data?.researchs.filter(x => x.line_id == 2)"
+                    :url="`https://api.37pajoohesh.ir/images/${item.file_image}`" :title="item.name"
+                    :subject="categories[item.category_id - 1]" :age="item.ages" :summary="item.description"
+                    :name="teacher?.data.name + ((teacher?.data?.last_name) ? teacher?.data?.last_name : '')"
+                    :star="item.status" :id="item.id">
+                </UserBook>
+            </div>
+
+            <div v-if="bookState == 3" class="mt-12 space-y-8">
+                <UserBook v-for="item in teacher?.data?.researchs.filter(x => x.line_id == 3)"
+                    :url="`https://api.37pajoohesh.ir/images/${item.file_image}`" :title="item.name"
+                    :subject="categories[item.category_id - 1]" :age="item.ages" :summary="item.description"
+                    :name="teacher?.data.name + ((teacher?.data?.last_name) ? teacher?.data?.last_name : '')"
+                    :star="item.status" :id="item.id">
                 </UserBook>
             </div>
         </div>
@@ -159,10 +180,34 @@
 <script setup>
 
 const { id } = useRoute().params
-const score = ref(3.6)
+const score = ref(0)
 
 const myState = ref(1)
 const bookState = ref(1)
 
+const user = useUser()
+user.getTeacher(id)
+const teacher = computed(() => user.teacher.value)
+const categories = ['ریاضی']
+const grades = [
+    'پایه اول',
+    'پایه دوم',
+    'پایه سوم',
+    'پایه چهارم',
+    'پایه پنجم',
+    'پایه ششم',
+    'پایه هفتم',
+    'پایه هشتم',
+    'پایه نهم',
+    'پایه دهم',
+    'پایه یازدهم',
+    'پایه دوازدهم',
+    'پایه سیزدهم',
+]
+const lines = [
+    'کتاب',
+    'مقاله',
+    'تجربه های برتر'
+]
 
 </script>

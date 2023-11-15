@@ -4,7 +4,8 @@
 
         <div class="mt-8 flex items-end justify-between max-w-[35rem] mx-auto">
             <div class="text-center text-black font-bold text-2xl shrink-0">
-                <div class="mb-4 w-[7rem] h-[7rem] rounded-full mx-auto border-[0.125rem] border-white shadow-md bg-cover bg-center bg-[#1DA8A6]" :style="`background-image: url('https://api.37pajoohesh.ir/images/${user.profile_photo_path}');`"></div>
+                <div class="w-[7rem] h-[7rem] rounded-full mx-auto border-[0.25rem] border-[#1DA8A6] shadow-md bg-contain bg-center bg-white mb-4 bg-no-repeat"
+                    style="background-image: url('/images/profile/profile.png'); background-size: 70%;"></div>
                 {{(user.name + ' ' + ((user.last_name) ? user.last_name : ''))}}
             </div>
 
@@ -19,7 +20,7 @@
                         <div class="text-black text-lg mt-1">تعداد آثار</div>
                     </div>
                     <div class="w-[6.25rem]">
-                        <div class="text-[#2D2D2D] font-bold text-2xl">-</div>
+                        <div class="text-[#2D2D2D] font-bold text-2xl">{{ score }}</div>
                         <div class="h-5 w-[6.25rem] mt-2"
                             :style="`background: linear-gradient(90deg, #ffb400 ${score / 5 * 100}%, #e1e1e1 ${score / 5 * 100}%); mask-image: url('/icons/profile/star.svg'); -webkit-mask-image: url('/icons/profile/star.svg'); mask-size: 1.25rem; -webkit-mask-size: 1.25rem;`">
                         </div>
@@ -158,7 +159,7 @@
 
 <script setup>
 
-const score = ref(5)
+const score = ref(0)
 const cities = useCities()
 
 if(cities.cities.value == null) {

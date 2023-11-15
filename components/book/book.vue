@@ -1,19 +1,21 @@
 <template>
     <div class="max-w-[50rem] mx-auto">
-        <div class="bg-white rounded-[2rem] flex items-center justify-between mt-10 px-6">
+        <NuxtLink :to="`/users/${book?.user_id}`" class="bg-white rounded-[2rem] flex items-center justify-between mt-10 px-6">
             <div class="flex items-center gap-4 text-2xl text-[#212121] font-bold">
-                <img class="w-[7rem] rounded-full border-[0.125rem] border-white shadow-md -my-4"
-                    src="/images/landing/pro1.png" alt="profile">
-                {{author?.data.name}} {{ author?.data.last_name }}
+                <div class="w-[7rem] h-[7rem] rounded-full mx-auto border-[0.25rem] border-[#1DA8A6] shadow-md bg-contain bg-center bg-white -my-4 bg-no-repeat"
+                    style="background-image: url('/images/profile/profile.png'); background-size: 70%;"></div>
+
+                {{ author?.data.name }} {{ author?.data.last_name }}
             </div>
 
             <div class="flex items-center gap-2 text-2xl font-bold text-[#2D2D2D]">
-                {{author?.effects}}
+                {{ author?.effects }}
                 <img class="h-10" src="/icons/books/pen.svg" alt="pen">
             </div>
-        </div>
+        </NuxtLink>
 
-        <img class="mt-8 rounded-[2rem] shadow-md mx-auto w-full max-w-[20rem]" :src="`https://api.37pajoohesh.ir/images/${book?.file_image}`" alt="book 1">
+        <img class="mt-8 rounded-[2rem] shadow-md mx-auto w-full max-w-[20rem]"
+            :src="`https://api.37pajoohesh.ir/images/${book?.file_image}`" alt="book">
 
         <div class="mt-8 flex px-4 justify-between items-center">
             <div class="h-10 w-[12.5rem] mt-2" :style="`background: linear-gradient(90deg, #ffb400 ${score / 5 * 100}%, #e1e1e1 ${score / 5 * 100}%); mask-image: url('/icons/profile/star.svg'); -webkit-mask-image: url('/icons/profile/star.svg'); 
@@ -32,7 +34,7 @@
             به دیگران پیشنهاد میکنید؟
 
             <div class="flex -ml-3 items-center text-[1.75rem]">
-                <span class="-ml-1">{{book?.score}}</span>
+                <span class="-ml-1">{{ book?.score }}</span>
                 <img class="h-16 cursor-pointer" src="/icons/profile/like.svg" alt="like">
             </div>
         </div>
@@ -46,15 +48,16 @@
             <div class="rounded-full h-[0.125rem] bg-[#35B9BE] mt-2"></div>
 
             <p class="text-justify text-xl text-[#3E3E3E] leading-[1.9rem] mt-3 pb-2">
-                {{book?.description}}
+                {{ book?.description }}
             </p>
         </div>
 
-        <a :href="`https://api.37pajoohesh.ir/images/${book?.file}`"  target="_blank" class="mt-8 rounded-full h-16 bg-[#57C5C6] flex items-center justify-between px-6">
+        <a :href="`https://api.37pajoohesh.ir/images/${book?.file}`" target="_blank"
+            class="mt-8 rounded-full h-16 bg-[#57C5C6] flex items-center justify-between px-6">
             <div class="text-white font-bold text-2xl">
                 دانلود فایل
                 <span class="font-normal text-xl">
-                    
+
                 </span>
             </div>
 
@@ -190,10 +193,11 @@
 </template>
 
 <script setup>
-const {id} = useRoute().params
+
+const { id } = useRoute().params
 const works = useWorks()
 const book = computed(() => works?.book?.value)
-works.getBook(id)
+await works.getBook(id)
 const score = computed(() => book?.value?.status)
 
 const author = computed(() => works.author?.value)

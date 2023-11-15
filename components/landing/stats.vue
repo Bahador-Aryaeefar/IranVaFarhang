@@ -28,7 +28,7 @@
             </div>
         </div>
 
-        <div class="max-w-[60rem] mx-auto">
+        <div class="max-w-[60rem] mx-auto" v-if="false">
             <div class="text-center text-[2rem] font-bold mt-20">نمودار آثار استان ها</div>
 
             <div class="h-[0.125rem] rounded-full bg-[#60D3D2] mt-5"></div>
