@@ -2,75 +2,88 @@
     <div class="max-w-[50rem] mx-auto">
         <div
             class="bg-white rounded-full shadow-md flex items-center justify-center text-black text-[1.75rem] font-bold h-16">
-            ثبت اقدام پژوهی جدید
+            {{ fill ? "تکمیل اقدام پژوهی" : (edit ? "تغییر اقدام پژوهی" : "ثبت اقدام پژوهی جدید") }}
         </div>
 
         <div class="mt-10 text-[#707070]">
             <div class="flex gap-4 gap-y-8 flex-wrap justify-center">
-                <div class="w-[20rem] grow">
-                    <div class="text-2xl font-bold text-center">
-                        نام اثر
+                <template v-if="!fill">
+                    <div class="w-[20rem] grow">
+                        <div class="text-2xl font-bold text-center">
+                            عنوان اثر
+                        </div>
+
+                        <div class="h-[0.125rem] rounded-full bg-[#21C2C0] mt-2"></div>
+
+                        <div class="h-14 relative mt-2">
+                            <input id="name" v-model="name"
+                                :class="(isConfirmed && !name) ? 'border-[#EE0035]' : 'border-[#E1E2E4] hover:border-[#57C5C6]'"
+                                class="h-full text-center px-6 w-full bg-white placeholder:text-[#707070] text-[#000000] text-xl focus:outline-none border-[0.125rem] focus:border-[#57C5C6] rounded-full shadow-md"
+                                type="text" placeholder="عنوان را وارد کنید">
+                        </div>
                     </div>
 
-                    <div class="h-[0.125rem] rounded-full bg-[#21C2C0] mt-2"></div>
+                    <div class="w-[20rem] grow">
+                        <div class="text-2xl font-bold text-center">
+                            موضوع اثر
+                        </div>
 
-                    <div class="h-14 relative mt-2">
-                        <input id="name" v-model="name"
-                            :class="(isConfirmed && !name) ? 'border-[#EE0035]' : 'border-[#E1E2E4] hover:border-[#57C5C6]'"
-                            class="h-full text-center px-6 w-full bg-white placeholder:text-[#707070] text-[#000000] text-xl focus:outline-none border-[0.125rem] focus:border-[#57C5C6] rounded-full shadow-md"
-                            type="text" placeholder="نام را وارد کنید">
-                    </div>
-                </div>
+                        <div class="h-[0.125rem] rounded-full bg-[#21C2C0] mt-2"></div>
 
-                <div class="w-[20rem] grow">
-                    <div class="text-2xl font-bold text-center">
-                        موضوع اثر
+                        <UiSelect2 :value="category" @pick="(picked) => category = picked" :items="categories" class="mt-2"
+                            placeHolder="موضوع را وارد کنید" :error="isConfirmed && !category"></UiSelect2>
                     </div>
 
-                    <div class="h-[0.125rem] rounded-full bg-[#21C2C0] mt-2"></div>
+                    <div class="w-[20rem] grow">
+                        <div class="text-2xl font-bold text-center">
+                            مقطع تحصیلی اثر
+                        </div>
 
-                    <UiSelect2 :value="category" @pick="(picked) => category = picked" :items="categories" class="mt-2"
-                        placeHolder="موضوع را وارد کنید" :error="isConfirmed && !category"></UiSelect2>
-                </div>
+                        <div class="h-[0.125rem] rounded-full bg-[#21C2C0] mt-2"></div>
 
-                <div class="w-[20rem] grow">
-                    <div class="text-2xl font-bold text-center">
-                        مقطع تحصیلی اثر
+                        <UiSelect2 :value="grade" @pick="(picked) => grade = picked" :items="grades" class="mt-2"
+                            placeHolder="مقطع تحصیلی را وارد کنید" :error="isConfirmed && !grade"></UiSelect2>
                     </div>
 
-                    <div class="h-[0.125rem] rounded-full bg-[#21C2C0] mt-2"></div>
+                    <div class="w-[20rem] grow">
+                        <div class="text-2xl font-bold text-center">
+                            نوع اثر
+                        </div>
 
-                    <UiSelect2 :value="grade" @pick="(picked) => grade = picked" :items="grades" class="mt-2"
-                        placeHolder="مقطع تحصیلی را وارد کنید" :error="isConfirmed && !grade"></UiSelect2>
-                </div>
+                        <div class="h-[0.125rem] rounded-full bg-[#21C2C0] mt-2"></div>
 
-                <div class="w-[20rem] grow">
-                    <div class="text-2xl font-bold text-center">
-                        دسته بندی اثر
+                        <UiSelect2 :value="individual" @pick="(picked) => individual = picked" :items="types" class="mt-2"
+                            placeHolder="نوع را وارد کنید" :error="isConfirmed && !individual"></UiSelect2>
                     </div>
 
-                    <div class="h-[0.125rem] rounded-full bg-[#21C2C0] mt-2"></div>
+                    <div v-if="individual == 'گروهی'" class="w-[20rem] grow">
+                        <div class="text-2xl font-bold text-center">
+                            نام همکاران
+                        </div>
 
-                    <UiSelect2 :value="line" @pick="(picked) => line = picked" :items="lines" class="mt-2"
-                        placeHolder="دسته بندی را وارد کنید" :error="isConfirmed && !line"></UiSelect2>
-                </div>
+                        <div class="h-[0.125rem] rounded-full bg-[#21C2C0] mt-2"></div>
 
-                <div class="w-[20rem] grow">
-                    <div class="text-2xl font-bold text-center">
-                        رده سنی مخاطب اثر
+                        <textarea id="partners" v-model="partners"
+                            :class="(isConfirmed && !partners) ? 'border-[#EE0035]' : 'border-[#E1E2E4] hover:border-[#57C5C6]'"
+                            class="h-[15rem] min-h-20 w-full bg-white rounded-[3rem] focus:outline-none px-8 py-3 mt-2 placeholder:text-[#707070] text-[#000000] text-xl text-center border-[0.125rem] focus:border-[#57C5C6] shadow-md"
+                            placeholder="نام همکاران را وارد کنید"></textarea>
                     </div>
 
-                    <div class="h-[0.125rem] rounded-full bg-[#21C2C0] mt-2"></div>
+                    <div class="w-[20rem] grow">
+                        <div class="text-2xl font-bold text-center">
+                            چکیده اثر
+                        </div>
 
-                    <div class="h-14 relative mt-2">
-                        <input id="age" v-model="ages"
-                            :class="(isConfirmed && !ages) ? 'border-[#EE0035]' : 'border-[#E1E2E4] hover:border-[#57C5C6]'"
-                            class="h-full text-center px-6 w-full bg-white placeholder:text-[#707070] text-[#000000] text-xl focus:outline-none border-[0.125rem] focus:border-[#57C5C6] rounded-full shadow-md"
-                            type="text" placeholder="رده سنی  را وارد کنید">
+                        <div class="h-[0.125rem] rounded-full bg-[#21C2C0] mt-2"></div>
+
+                        <textarea id="description" v-model="description"
+                            :class="(isConfirmed && !description) ? 'border-[#EE0035]' : 'border-[#E1E2E4] hover:border-[#57C5C6]'"
+                            class="h-[15rem] min-h-20 w-full bg-white rounded-[3rem] focus:outline-none px-8 py-3 mt-2 placeholder:text-[#707070] text-[#000000] text-xl text-center border-[0.125rem] focus:border-[#57C5C6] shadow-md"
+                            placeholder="چکیده را وارد کنید"></textarea>
                     </div>
-                </div>
+                </template>
 
-                <div class="w-[20rem] grow">
+                <div v-if="fill || edit" class="w-[20rem] grow">
                     <div class="text-2xl font-bold text-center">
                         بارگذاری اثر
                     </div>
@@ -87,20 +100,7 @@
 
                 </div>
 
-                <div class="w-[20rem] grow">
-                    <div class="text-2xl font-bold text-center">
-                        چکیده اثر
-                    </div>
-
-                    <div class="h-[0.125rem] rounded-full bg-[#21C2C0] mt-2"></div>
-
-                    <textarea id="description" v-model="description"
-                        :class="(isConfirmed && !description) ? 'border-[#EE0035]' : 'border-[#E1E2E4] hover:border-[#57C5C6]'"
-                        class="h-[15rem] min-h-20 w-full bg-white rounded-[3rem] focus:outline-none px-8 py-3 mt-2 placeholder:text-[#707070] text-[#000000] text-xl text-center border-[0.125rem] focus:border-[#57C5C6] shadow-md"
-                        placeholder="چکیده اثر را وارد کنید"></textarea>
-                </div>
-
-                <div class="w-[20rem] grow">
+                <div v-if="fill || edit" class="w-[20rem] grow">
                     <div class="text-2xl font-bold text-center">
                         بارگذاری تصویر اثر
                     </div>
@@ -142,41 +142,67 @@ const category = ref("")
 const line = ref("")
 const grade = ref("")
 const description = ref("")
-const ages = ref("")
-const toast = useToast()
 const research = useResearch()
+const router = useRoute() 
+const toast = useToast()
+const info = computed(() =>research.researches.value )
 
-const categories = ['ریاضی']
+const categories = [
+    'آموزش و یادگیری',
+    'بهداشت و محیط زیست',
+    'تربیت بدنی و سلامت',
+    'دینی و اجتماعی',
+    'روانشناسی',
+    'سایر',
+    'علوم پایه',
+    'فرهنگی و هنری',
+    'فناوری و اطلاعات',
+    'فنی حرفه ای و کاردانش',
+    'کودکان استثنایی',
+    'مدیریت',
+]
 const grades = [
-    'پایه اول',
-    'پایه دوم',
-    'پایه سوم',
-    'پایه چهارم',
-    'پایه پنجم',
-    'پایه ششم',
-    'پایه هفتم',
-    'پایه هشتم',
-    'پایه نهم',
-    'پایه دهم',
-    'پایه یازدهم',
-    'پایه دوازدهم',
-    'پایه سیزدهم',
+    'ابتدایی',
+    'متوسطه اول',
+    'متوسطه دوم',
+    'کاردانش و فنی حرفه ای',
+    'اداری',
+    'دانشجو معلم'
 ]
 const lines = [
     'کتاب',
     'مقاله',
     'تجربه های برتر'
 ]
+const types = [
+    'انفرادی',
+    'گروهی'
+]
+
+const individual = ref("")
+const partners = ref("")
+const isConfirmed = ref(false)
 
 
+
+const fill = ref(router.query.type == "fill")
+const edit = ref(router.query.type == "edit")
 const pickedImageRef = ref("")
 const pickedImage = ref(null)
-const isConfirmed = ref(false)
+
+if(edit.value) {
+    if(!info.value) navigateTo('/projects/research')
+    name.value = info.value.name
+    category.value = categories[info.value.category_id-1]
+    grade.value = grades[info.value.grade_id-1]
+    individual.value = types[info.value.individual-1] 
+    description.value = info.value.description
+    partners.value = info.value.partners
+}
 
 const change = ref(() => {
 
 })
-
 onMounted(() => {
     let reader = new FileReader()
     change.value = (event) => {
@@ -194,9 +220,6 @@ onMounted(() => {
     }
     reader.onload = (() => pickedImageRef.value = reader.result)
 })
-
-
-
 const fileName = ref("انتخاب فایل")
 const file = ref(null)
 
@@ -206,44 +229,103 @@ const pickFile = (event) => {
     fileName.value = event.target.files[0].name
 }
 
+
 const confirm = () => {
+    if (fill.value) update()
+    else if (edit.value) edits()
+    else add()
+}
+
+const add = () => {
     isConfirmed.value = true
     let isValid = true
 
     if (!name.value) isValid = false
     if (!category.value) isValid = false
-    if (!line.value) isValid = false
+    // if (!line.value) isValid = false
     if (!grade.value) isValid = false
-    if (!ages.value) isValid = false
+    if (!individual.value) isValid = false
+    if (individual.value == "گروهی" && !partners.value) isValid = false
     if (!description.value) isValid = false
+
+    if (!isValid) return
+
+    const req = {
+        name: name.value,
+        category_id: categories.indexOf(category.value) + 1,
+        line_id: 5,
+        grade_id: grades.indexOf(grade.value) + 1,
+        individual: types.indexOf(individual.value),
+        partners: 3,
+        description: description.value
+    }
+
+    console.log(req);
+    research.addResearch(req)
+}
+
+const update = () => {
+    isConfirmed.value = true
+    let isValid = true
+    
     if (!file.value) isValid = false
     if (!pickedImage.value) isValid = false
 
     if (!isValid) return
 
     let formData = new FormData()
-    formData.append("name", name.value);
-    formData.append("category_id", categories.indexOf(category.value) + 1);
-    formData.append("line_id", lines.indexOf(line.value) + 1);
-    formData.append("grade_id", grades.indexOf(grade.value) + 1);
-    formData.append("description", description.value);
-    formData.append("ages", ages.value);
     formData.append("file", file.value);
     formData.append("file_image", pickedImage.value);
 
     // for (var pair of formData.entries()) {
     //     console.log(pair[0] + ', ' + pair[1]);
     // }
-    research.addResearch(formData)
 
+    research.updateResearch(formData)
 }
 
+const edits = () => {
+    isConfirmed.value = true
+    let isValid = true
+    
+    if (!file.value) isValid = false
+    if (!pickedImage.value) isValid = false
+    if (!name.value) isValid = false
+    if (!category.value) isValid = false
+    // if (!line.value) isValid = false
+    if (!grade.value) isValid = false
+    if (!individual.value) isValid = false
+    if (individual.value == "گروهی" && !partners.value) isValid = false
+    if (!description.value) isValid = false
+
+    if (!isValid) return
+
+    let formData = new FormData()
+    
+    formData.append("name", name.value);
+    formData.append("category_id", categories.indexOf(category.value) + 1);
+    formData.append("line_id", 5);
+    formData.append("grade_id", grades.indexOf(grade.value) + 1);
+    formData.append("individual", types.indexOf(individual.value));
+    formData.append("partners", 3);
+    formData.append("description", description.value);
+    formData.append("file", file.value);
+    formData.append("file_image", pickedImage.value);
+
+    // for (var pair of formData.entries()) {
+    //     console.log(pair[0] + ', ' + pair[1]);
+    // }
+
+    research.updateResearch(formData)
+}
 
 </script>
 
 <style scoped>
-input[type=file], /* FF, IE7+, chrome (except button) */
-input[type=file]::-webkit-file-upload-button { /* chromes and blink button */
-    cursor: pointer; 
+input[type=file],
+/* FF, IE7+, chrome (except button) */
+input[type=file]::-webkit-file-upload-button {
+    /* chromes and blink button */
+    cursor: pointer;
 }
 </style>

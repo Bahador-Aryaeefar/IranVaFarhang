@@ -2,18 +2,19 @@
     <div class="max-w-[60rem] mx-auto">
         <div
             class="bg-white rounded-full shadow-md flex items-center justify-center text-black text-[1.75rem] font-bold h-16">
-            آثار
+            اقدام پژوهی
         </div>
 
-        <div class="mt-8 space-y-6">
-            <ProjectsResearch url="/images/projects/research1.png" title="درمان اختلالات ریاضی" subject="ریاضی"
-                age="سنین 12 تا 18 سال" summary="درمان اختلالات ریاضی کتابی است از دکتر  که مولفان آن را" date="1401/07/12">
+        <NuxtLink v-if="false" to="/projects/research/new"
+                class="mt-8 h-20 rounded-[1.25rem] bg-white text-[#21C2C0] border-[0.125rem] border-[#21C2C0] text-[2rem] font-bold w-full block flex items-center justify-center ">ثبت</NuxtLink>
+
+        <div v-else-if="item" class="mt-8 space-y-6">
+            <ProjectsResearch url="/images/projects/research1.png" :title="item.name" :subject="categories[item.category_id-1]"
+                :age="grades[item.grade_id-1]" :summary="item.description" date="1401/07/12">
             </ProjectsResearch>
-            <ProjectsResearch url="/images/projects/research2.png" title="تولد دوباره زمان" subject="فیزیک" age="تمام سنین"
-                summary="در این کتاب سعی به عمل آمده که شرح کلی از روابط اعداد" date="1400/07/16"></ProjectsResearch>
         </div>
 
-        <div class="fixed bottom-0 right-0 pb-14 px-10 w-full">
+        <div v-if="false" class="fixed bottom-0 right-0 pb-14 px-10 w-full">
             <div class="max-w-[100rem] mx-auto w-full flex items-center gap-4 text-[#21C2C0] text-[2rem] font-bold">
                 <div class="w-20 h-20 shrink-0 rounded-full bg-[#21C2C0] relative cursor-pointer shadow-md"
                     @click="navigateTo('/projects/research/new')">
@@ -32,5 +33,39 @@
 <script setup>
 
 const isFinal = ref(false)
+const research = useResearch()
+const item = computed(() => research.research.value)
+research.getResearches()
+const categories = [
+    'آموزش و یادگیری',
+    'بهداشت و محیط زیست',
+    'تربیت بدنی و سلامت',
+    'دینی و اجتماعی',
+    'روانشناسی',
+    'سایر',
+    'علوم پایه',
+    'فرهنگی و هنری',
+    'فناوری و اطلاعات',
+    'فنی حرفه ای و کاردانش',
+    'کودکان استثنایی',
+    'مدیریت',
+]
+const grades = [
+    'ابتدایی',
+    'متوسطه اول',
+    'متوسطه دوم',
+    'کاردانش و فنی حرفه ای',
+    'اداری',
+    'دانشجو معلم'
+]
+const lines = [
+    'کتاب',
+    'مقاله',
+    'تجربه های برتر'
+]
+const types = [
+    'انفرادی',
+    'گروهی'
+]
 
 </script>

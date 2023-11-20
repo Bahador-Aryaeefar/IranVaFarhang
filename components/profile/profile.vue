@@ -2,75 +2,39 @@
     <div>
         <!-- <img class="w-8" src="/icons/profile/star.svg" alt="star"> -->
 
-        <div class="mt-8 flex items-end justify-between max-w-[35rem] mx-auto">
+        <div class="mt-10 flex items-end justify-center max-w-[35rem] mx-auto items-center">
             <div class="text-center text-black font-bold text-2xl shrink-0">
                 <div class="w-[7rem] h-[7rem] rounded-full mx-auto border-[0.25rem] border-[#1DA8A6] shadow-md bg-contain bg-center bg-white mb-4 bg-no-repeat"
                     style="background-image: url('/images/profile/profile.png'); background-size: 70%;"></div>
-                {{(user.name + ' ' + ((user.last_name) ? user.last_name : ''))}}
-            </div>
-
-            <div>
-                <div class="flex gap-2 text-center px-4">
-                    <div class="w-[6.25rem]">
-                        <div class="text-[#2D2D2D] font-bold text-2xl">-</div>
-                        <div class="text-black text-lg mt-1">دنبال کننده</div>
-                    </div>
-                    <div class="w-[6.25rem]">
-                        <div class="text-[#2D2D2D] font-bold text-2xl">-</div>
-                        <div class="text-black text-lg mt-1">تعداد آثار</div>
-                    </div>
-                    <div class="w-[6.25rem]">
-                        <div class="text-[#2D2D2D] font-bold text-2xl">{{ score }}</div>
-                        <div class="h-5 w-[6.25rem] mt-2"
-                            :style="`background: linear-gradient(90deg, #ffb400 ${score / 5 * 100}%, #e1e1e1 ${score / 5 * 100}%); mask-image: url('/icons/profile/star.svg'); -webkit-mask-image: url('/icons/profile/star.svg'); mask-size: 1.25rem; -webkit-mask-size: 1.25rem;`">
-                        </div>
-                    </div>
-                </div>
-
-                <button class="h-10 w-full rounded-full bg-[#1DA8A6] mt-4 text-white text-xl font-bold shadow-md">دنبال
-                    کردن</button>
+                {{ (user.name + ' ' + ((user.last_name) ? user.last_name : '')) }}
             </div>
         </div>
 
         <div class="mt-16 max-w-[50rem] mx-auto">
             <div class="text-black font-bold text-2xl text-center">درباره من</div>
             <div class="mt-6 h-[0.125rem] rounded-full bg-[#21C2C0]"></div>
-            <div class="flex items-center gap-4 mt-6">
-                <button class="h-10 rounded-full w-full text-xl font-bold" @click="myState = 1"
-                    :class="myState == 1 ? 'bg-[#1DA8A6] text-white' : 'text-black'">توضیحات</button>
 
-                <div class="h-8 rounded-full w-[0.125rem] bg-[#21C2C0]"></div>
-
-                <button class="h-10 rounded-full w-full text-xl font-bold" @click="myState = 2"
-                    :class="myState == 2 ? 'bg-[#1DA8A6] text-white' : 'text-black'">سوابق کاری</button>
-
-                <div class="h-8 rounded-full w-[0.125rem] bg-[#21C2C0]"></div>
-
-                <button class="h-10 rounded-full w-full text-xl font-bold" @click="myState = 3"
-                    :class="myState == 3 ? 'bg-[#1DA8A6] text-white' : 'text-black'">راه های ارتباطی</button>
-            </div>
-
-            <div class="mt-12">
-                <ul v-if="myState == 1" class="text-lg text-black space-y-3">
+            <div class="mt-6">
+                <ul v-if="myState == 1" class="text-xl text-black space-y-3">
                     <li class="flex gap-2">
                         <div class="w-3 h-3 rounded-full bg-[#1DA8A6] mt-2 shrink-0"></div>
-                        دکترای ریاضی محض (دانشگاه امیرکبیر)
+                        کد پرسنلی :
+                        {{ user.personal_code }}
                     </li>
                     <li class="flex gap-2">
                         <div class="w-3 h-3 rounded-full bg-[#1DA8A6] mt-2 shrink-0"></div>
-                        کارشناس ارشد ریاضی (دانشگاه رازی)
+                        کد ملی :
+                        {{ user.national_code }}
                     </li>
                     <li class="flex gap-2">
                         <div class="w-3 h-3 rounded-full bg-[#1DA8A6] mt-2 shrink-0"></div>
-                        کارشناس فیزیک (دانشگاه رازی)
+                        استان :
+                        {{ cities.searchProvince(user.province_id)?.title}}
                     </li>
                     <li class="flex gap-2">
                         <div class="w-3 h-3 rounded-full bg-[#1DA8A6] mt-2 shrink-0"></div>
-                        معلم دبستان
-                    </li>
-                    <li class="flex gap-2">
-                        <div class="w-3 h-3 rounded-full bg-[#1DA8A6] mt-2 shrink-0"></div>
-                        {{cities.searchProvince(user.province_id)?.title + ' - ' + cities.searchCity(user.city_id)?.title}}
+                        شهر :‌ 
+                        {{ cities.searchCity(user.city_id)?.title }}
                     </li>
                 </ul>
 
@@ -109,7 +73,7 @@
             </div>
         </div>
 
-        <div class="mt-16 max-w-[50rem] mx-auto">
+        <div v-if="false" class="mt-16 max-w-[50rem] mx-auto">
             <div class="text-black font-bold text-2xl text-center">آثار</div>
             <div class="mt-6 h-[0.125rem] rounded-full bg-[#21C2C0]"></div>
             <div class="flex items-center gap-4 mt-6">
@@ -138,7 +102,7 @@
             </div>
         </div>
 
-        <div class="mt-16 max-w-[50rem] mx-auto">
+        <div v-if="false" class="mt-16 max-w-[50rem] mx-auto">
             <div class="text-black font-bold text-2xl text-center">افتخارات</div>
             <div class="mt-6 h-[0.125rem] rounded-full bg-[#21C2C0]"></div>
 
@@ -154,6 +118,8 @@
                     year="1399"></ProfileTop>
             </div>
         </div>
+
+        <ProfileAuth class="mt-10 max-w-[50rem] shadow-md"></ProfileAuth>
     </div>
 </template>
 
@@ -162,13 +128,13 @@
 const score = ref(0)
 const cities = useCities()
 
-if(cities.cities.value == null) {
+if (cities.cities.value == null) {
     cities.getCities()
 }
 
 const myState = ref(1)
 const bookState = ref(1)
-const {user} = useUser()
+const { user } = useUser()
 
 // {
 //     "id": 20,
