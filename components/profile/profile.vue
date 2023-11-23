@@ -15,7 +15,7 @@
             <div class="mt-6 h-[0.125rem] rounded-full bg-[#21C2C0]"></div>
 
             <div class="mt-6">
-                <ul v-if="myState == 1" class="text-xl text-black space-y-3">
+                <ul v-if="myState == 1" class="text-xl text-black  flex flex-wrap gap-10 gap-y-5 justify-center">
                     <li class="flex gap-2">
                         <div class="w-3 h-3 rounded-full bg-[#1DA8A6] mt-2 shrink-0"></div>
                         کد پرسنلی :
