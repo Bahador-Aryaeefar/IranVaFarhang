@@ -114,10 +114,10 @@
                 </div>
 
                 <div v-if="!isLogin" class="h-14 w-[18rem] relative">
-                    <input id="serviceDate" v-model="serviceDate"
-                        :class="(isConfirmed && !serviceDate) ? 'border-[#EE0035]' : 'border-[#E1E2E4] hover:border-[#57C5C6]'"
+                    <input id="address" v-model="address"
+                        :class="(isConfirmed && !address) ? 'border-[#EE0035]' : 'border-[#E1E2E4] hover:border-[#57C5C6]'"
                         class="h-full px-6 w-full text-[#1C0E07] text-lg focus:outline-none bg-transparent placeholder:text-[#A69F9B] border-[0.125rem] focus:border-[#57C5C6] rounded-full"
-                        type="text" placeholder="شروع کار">
+                        type="text" placeholder="محل کار">
                 </div>
 
                 <div class="h-14 w-[18rem] relative">
@@ -175,7 +175,7 @@ const discipline = ref("")
 const experience = ref("")
 const position = ref("")
 const positionHistory = ref("")
-const serviceDate = ref("")
+const address = ref("")
 const national = ref("")
 
 const cities = useCities()
@@ -268,7 +268,7 @@ const registerTeacher = () => {
     if (!experience.value) isValid = false
     if (!position.value) isValid = false
     if (!positionHistory.value) isValid = false
-    if (!serviceDate.value) isValid = false
+    if (!address.value) isValid = false
     if (!national.value) isValid = false
 
 
@@ -290,7 +290,7 @@ const registerTeacher = () => {
         work_experience: experience.value,
         current_position: position.value,
         history_current_position: positionHistory.value,
-        service_start_date: serviceDate.value,
+        work_address: address.value,
         national_code: national.value,
     }
 

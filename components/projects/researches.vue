@@ -5,12 +5,12 @@
             اقدام پژوهی
         </div>
 
-        <NuxtLink v-if="false" to="/projects/research/new"
+        <NuxtLink v-if="!item || !item.name" to="/projects/research/new"
                 class="mt-8 h-20 rounded-[1.25rem] bg-white text-[#21C2C0] border-[0.125rem] border-[#21C2C0] text-[2rem] font-bold w-full block flex items-center justify-center ">ثبت</NuxtLink>
 
         <div v-else-if="item" class="mt-8 space-y-6">
-            <ProjectsResearch url="/images/projects/research1.png" :title="item.name" :subject="categories[item.category_id-1]"
-                :age="grades[item.grade_id-1]" :summary="item.description" date="1401/07/12">
+            <ProjectsResearch :url="item.file_image" :title="item.name" :subject="categories[item.category_id-1]"
+                :age="grades[item.grade_id-1]" :summary="item.description" :date="types[item.individual]">
             </ProjectsResearch>
         </div>
 

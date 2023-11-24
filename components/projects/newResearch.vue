@@ -256,7 +256,7 @@ const add = () => {
         line_id: 5,
         grade_id: grades.indexOf(grade.value) + 1,
         individual: types.indexOf(individual.value),
-        partners: 3,
+        partners: partners.value,
         description: description.value
     }
 
@@ -307,7 +307,7 @@ const edits = () => {
     formData.append("line_id", 5);
     formData.append("grade_id", grades.indexOf(grade.value) + 1);
     formData.append("individual", types.indexOf(individual.value));
-    formData.append("partners", 3);
+    formData.append("partners", partners.value);
     formData.append("description", description.value);
     formData.append("file", file.value);
     formData.append("file_image", pickedImage.value);
