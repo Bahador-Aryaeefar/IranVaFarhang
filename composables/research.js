@@ -7,6 +7,7 @@ export const useResearch = () => {
     const addResearch = async (req) => {
         await useFetch('https://api.37pajoohesh.ir/api/research/store', {
             onRequest({ request, options }) {
+                toast.addLoad()
                 console.log('add research')
                 options.headers = {
                     "Accept": "application/json"
@@ -17,10 +18,12 @@ export const useResearch = () => {
             },
             onRequestError({ request, options, error, response }) {
                 // Handle the request errors
+                toast.clearLoad()
                 toast.addError("Add Research: " + error)
             },
             onResponse({ request, response, options }) {
                 // Process the response data    return response._data
+                toast.clearLoad()
                 console.log(response)
                 if (response.status == 200 || response.status == 201) {
                     navigateTo('/projects/research')
@@ -28,6 +31,7 @@ export const useResearch = () => {
             },
             onResponseError({ request, response, options }) {
                 // Handle the response errors 
+                toast.clearLoad()
                 toast.addError("Add Research: " + response._data.data)
             },
             initialCache: false,
@@ -39,6 +43,7 @@ export const useResearch = () => {
     const getResearches = async (req) => {
         await useFetch('https://api.37pajoohesh.ir/api/research', {
             onRequest({ request, options }) {
+                toast.addLoad()
                 console.log('get research')
                 options.headers = {
                     "Accept": "application/json"
@@ -48,10 +53,12 @@ export const useResearch = () => {
             },
             onRequestError({ request, options, error, response }) {
                 // Handle the request errors
+                toast.clearLoad()
                 toast.addError("get Research: " + error)
             },
             onResponse({ request, response, options }) {
                 // Process the response data    return response._data
+                toast.clearLoad()
                 console.log(response)
                 if (response.status == 200 || response.status == 201) {
                     researches.value = response._data
@@ -59,6 +66,7 @@ export const useResearch = () => {
             },
             onResponseError({ request, response, options }) {
                 // Handle the response errors 
+                toast.clearLoad()
                 toast.addError("get Research: " + response._data.data)
             },
             initialCache: false,
@@ -70,6 +78,7 @@ export const useResearch = () => {
     const updateResearch = async (req) => {
         await useFetch('https://api.37pajoohesh.ir/api/research/update', {
             onRequest({ request, options }) {
+                toast.addLoad()
                 console.log('Update research')
                 options.headers = {
                     "Accept": "application/json"
@@ -80,10 +89,12 @@ export const useResearch = () => {
             },
             onRequestError({ request, options, error, response }) {
                 // Handle the request errors
+                toast.clearLoad()
                 toast.addError("Update Research: " + error)
             },
             onResponse({ request, response, options }) {
                 // Process the response data    return response._data
+                toast.clearLoad()
                 console.log(response)
                 if (response.status == 200 || response.status == 201) {
                     navigateTo('/projects/research')
@@ -91,6 +102,7 @@ export const useResearch = () => {
             },
             onResponseError({ request, response, options }) {
                 // Handle the response errors 
+                toast.clearLoad()
                 toast.addError("Update Research: " + response._data.data)
             },
             initialCache: false,

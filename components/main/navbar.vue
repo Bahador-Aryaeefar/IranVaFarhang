@@ -2,7 +2,7 @@
     <nav class="bg-[#57C5C6]">
         <div class="h-[4rem] flex items-center justify-between px-8 text-white text-xl">
             <div class="flex gap-5 items-center">
-                <div class="gap-0.5 mt-1 flex cursor-pointer" @click="navigateTo('/projects')">
+                <div v-if="false" class="gap-0.5 mt-1 flex cursor-pointer" @click="navigateTo('/projects')">
                     <div class="w-2.5 h-2.5 rounded-full bg-white"></div>
                     <div class="w-2.5 h-2.5 rounded-full bg-white"></div>
                     <div class="w-2.5 h-2.5 rounded-full bg-white"></div>
