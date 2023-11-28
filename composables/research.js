@@ -76,7 +76,7 @@ export const useResearch = () => {
 
     
     const updateResearch = async (req) => {
-        await useFetch('https://api.37pajoohesh.ir/api/research/update', {
+        await useFetch('https://api.37pajoohesh.ir/api/researchs/update', {
             onRequest({ request, options }) {
                 toast.addLoad()
                 console.log('Update research')
