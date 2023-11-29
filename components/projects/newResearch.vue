@@ -195,7 +195,7 @@ if(edit.value) {
     name.value = info.value.name
     category.value = categories[info.value.category_id-1]
     grade.value = grades[info.value.grade_id-1]
-    individual.value = types[info.value.individual-1] 
+    individual.value = types[info.value.individual] 
     description.value = info.value.description
     partners.value = info.value.partners
 }
@@ -311,6 +311,7 @@ const edits = () => {
     formData.append("description", description.value);
     formData.append("file", file.value);
     formData.append("file_image", pickedImage.value);
+    formData.append("_method", "put");
 
     // for (var pair of formData.entries()) {
     //     console.log(pair[0] + ', ' + pair[1]);

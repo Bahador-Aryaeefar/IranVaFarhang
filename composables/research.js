@@ -83,7 +83,7 @@ export const useResearch = () => {
                 options.headers = {
                     "Accept": "application/json"
                 }
-                options.method = 'PUT'
+                options.method = 'POST'
                 options.body = req
                 options.headers.Authorization = 'Bearer ' + cookie.value
             },
