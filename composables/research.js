@@ -31,7 +31,6 @@ export const useResearch = () => {
             },
             onResponseError({ request, response, options }) {
                 // Handle the response errors 
-                toast.clearLoad()
                 toast.addError("Add Research: " + response._data.data)
             },
             initialCache: false,
@@ -66,7 +65,6 @@ export const useResearch = () => {
             },
             onResponseError({ request, response, options }) {
                 // Handle the response errors 
-                toast.clearLoad()
                 toast.addError("get Research: " + response._data.data)
             },
             initialCache: false,
@@ -102,7 +100,6 @@ export const useResearch = () => {
             },
             onResponseError({ request, response, options }) {
                 // Handle the response errors 
-                toast.clearLoad()
                 toast.addError("Update Research: " + response._data.data)
             },
             initialCache: false,

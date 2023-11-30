@@ -256,7 +256,7 @@ const add = () => {
         line_id: 5,
         grade_id: grades.indexOf(grade.value) + 1,
         individual: types.indexOf(individual.value),
-        partners: partners.value,
+        partners: (partners.value) ? partners.value : 'ندارد',
         description: description.value
     }
 

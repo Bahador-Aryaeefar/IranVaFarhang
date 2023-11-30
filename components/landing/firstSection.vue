@@ -27,7 +27,7 @@
                 <span class="text-black absolute left-[10%] top-0 bottom-0 my-auto text-[5cqw] h-fit">ثبت اثر</span>
             </NuxtLink> -->
             
-            <NuxtLink to="/projects/research" v-if="true || coords.status" class="w-[calc(50%-1.25rem)] shrink-0 split:w-full shadow-md rounded-[1.25rem] overflow-hidden relative font-bold cursor-pointer group" style="container-type: inline-size;">
+            <NuxtLink to="/projects/research" v-if="[1,2].includes(coords.status)" class="w-[calc(50%-1.25rem)] shrink-0 split:w-full shadow-md rounded-[1.25rem] overflow-hidden relative font-bold cursor-pointer group" style="container-type: inline-size;">
                 <!-- <img class="w-full group-hover:scale-[104%]" src="/images/landing/teachings.png"
                     alt="teachings"> -->
                 <div class="h-[30cqw] w-full group-hover:scale-[104%] bg-cover transition-transform duration-500 bg-right-bottom"

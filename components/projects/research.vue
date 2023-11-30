@@ -17,8 +17,8 @@
                         <div class="truncate">{{ summary }}</div>
                     </div>
 
-                    <template v-if="true">
-                        <NuxtLink v-if="!url && false" to="/projects/research/new?type=fill"
+                    <template v-if="coords.status == 2">
+                        <NuxtLink v-if="!url" to="/projects/research/new?type=fill"
                             class="py-1 px-4 rounded-[0.75rem] bg-[#F5F6FA] text-lg font-bold text-[#20BFBE]">تکمیل
                         </NuxtLink>
                         <NuxtLink v-else to="/projects/research/new?type=edit"
@@ -42,4 +42,6 @@
 
 <script setup>
 const props = defineProps(['url', 'title', 'subject', 'age', 'summary', 'date', 'wait'])
+
+const {coords} = useUser()
 </script>

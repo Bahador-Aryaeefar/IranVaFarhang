@@ -9,4 +9,7 @@ definePageMeta({
     layout: 'main',
     middleware: ["auth"]
 })
+
+const {coords} = useUser()
+if(![1,2].includes(coords.value.status)) navigateTo('/')
 </script>

@@ -34,8 +34,7 @@ export const useUser = () => {
                 }
             },
             onResponseError({ request, response, options }) {
-                // Handle the response errors 
-                toast.clearLoad()
+                // Handle the response errors
                 toast.addError("User: " + response._data.data)
                 const auth = useAuth()
                 auth.logout("")
@@ -70,7 +69,6 @@ export const useUser = () => {
             },
             onResponseError({ request, response, options }) {
                 // Handle the response errors 
-                toast.clearLoad()
                 toast.addError("teacher: " + response._data.data)
             },
             initialCache: false
