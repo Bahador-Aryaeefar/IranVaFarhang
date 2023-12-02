@@ -288,8 +288,8 @@ const edits = () => {
     isConfirmed.value = true
     let isValid = true
     
-    if (!file.value) isValid = false
-    if (!pickedImage.value) isValid = false
+    // if (!file.value) isValid = false
+    // if (!pickedImage.value) isValid = false
     if (!name.value) isValid = false
     if (!category.value) isValid = false
     // if (!line.value) isValid = false
@@ -309,8 +309,8 @@ const edits = () => {
     formData.append("individual", types.indexOf(individual.value));
     formData.append("partners", partners.value);
     formData.append("description", description.value);
-    formData.append("file", file.value);
-    formData.append("file_image", pickedImage.value);
+    if(file.value) formData.append("file", file.value);
+    if(pickedImage.value) formData.append("file_image", pickedImage.value);
     formData.append("_method", "put");
 
     // for (var pair of formData.entries()) {

@@ -33,7 +33,8 @@ export const useCities = () => {
                 console.log(response._data)
                 toast.addError("cities: " + response._data.data)
             },
-            initialCache: false
+            initialCache: false,
+            server: false
         })
     }
 

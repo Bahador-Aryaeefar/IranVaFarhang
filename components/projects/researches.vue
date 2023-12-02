@@ -9,7 +9,7 @@
                 class="mt-8 h-20 rounded-[1.25rem] bg-white text-[#21C2C0] border-[0.125rem] border-[#21C2C0] text-[2rem] font-bold w-full block flex items-center justify-center ">ثبت</NuxtLink>
 
         <div v-else-if="item" class="mt-8 space-y-6">
-            <ProjectsResearch :url="item.file_image" :title="item.name" :subject="categories[item.category_id-1]"
+            <ProjectsResearch :url="`https://api.37pajoohesh.ir/images/research/${item.file_image}`" :title="item.name" :subject="categories[item.category_id-1]"
                 :age="grades[item.grade_id-1]" :summary="item.description" :date="types[item.individual]">
             </ProjectsResearch>
         </div>

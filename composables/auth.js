@@ -32,15 +32,21 @@ export const useAuth = () => {
                 toast.clearLoad()
                 console.log(response)
                 if (response.status == 200 || response.status == 201) {
-                    cookie.value = response._data
-                    navigateTo('/')
+                    if (response._data.code == 303) {
+                        toast.addError("Login: " + response._data.data)
+                    }
+                    else {
+                        cookie.value = response._data
+                        navigateTo('/')
+                    }
                 }
             },
             onResponseError({ request, response, options }) {
                 // Handle the response errors 
-                toast.addError("Login: " + response._data.data)
+                toast.addError("Login: " + response._data)
             },
             initialCache: false,
+            server: false
         })
     }
 
@@ -73,7 +79,8 @@ export const useAuth = () => {
                 // Handle the response errors 
                 toast.addError("Register: " + response._data.data)
             },
-            initialCache: false
+            initialCache: false,
+            server: false
         })
     }
 
@@ -141,7 +148,8 @@ export const useAuth = () => {
                 // Handle the response errors 
                 toast.addError("RegisterTeacher: " + response._data.data)
             },
-            initialCache: false
+            initialCache: false,
+            server: false
         })
     }
 
