@@ -5,7 +5,7 @@ export const useResearch = () => {
     const researches = useState('research', () => null)
 
     const addResearch = async (req) => {
-        await useFetch('https://api.37pajoohesh.ir/api/research/store', {
+        await useFetch('https://37pajoohesh.ir/api/research/store', {
             onRequest({ request, options }) {
                 toast.addLoad()
                 console.log('add research')
@@ -40,7 +40,7 @@ export const useResearch = () => {
 
 
     const getResearches = async (req) => {
-        await useFetch('https://api.37pajoohesh.ir/api/research', {
+        await useFetch('https://37pajoohesh.ir/api/research', {
             onRequest({ request, options }) {
                 toast.addLoad()
                 console.log('get research')
@@ -74,7 +74,7 @@ export const useResearch = () => {
 
     
     const updateResearch = async (req) => {
-        await useFetch('https://api.37pajoohesh.ir/api/researchs/update', {
+        await useFetch('https://37pajoohesh.ir/api/researchs/update', {
             onRequest({ request, options }) {
                 toast.addLoad()
                 console.log('Update research')

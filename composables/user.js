@@ -7,7 +7,7 @@ export const useUser = () => {
 
 
     const getUser = async (req) => {
-        await useFetch('https://api.37pajoohesh.ir/api/getUser', {
+        await useFetch('https://37pajoohesh.ir/api/getUser', {
             onRequest({ request, options }) {
                 toast.addLoad()
                 console.log('getUser')
@@ -32,6 +32,7 @@ export const useUser = () => {
                     user.value = response._data.data
                     coords.value = response._data.coordinate
                 }
+                else auth.logout("")
             },
             onResponseError({ request, response, options }) {
                 // Handle the response errors
@@ -45,7 +46,7 @@ export const useUser = () => {
 
     const getTeacher = async (id) => {
         teacher.value = null
-        await useFetch(`https://api.37pajoohesh.ir/api/profile/${id}`, {
+        await useFetch(`https://37pajoohesh.ir/api/profile/${id}`, {
             onRequest({ request, options }) {
                 toast.addLoad()
                 console.log('get teacher')

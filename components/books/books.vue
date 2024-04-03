@@ -48,7 +48,7 @@
         </div>
 
         <div class="mt-12 space-y-8">
-            <BooksBook v-for="item in works.research.value" :url="`https://api.37pajoohesh.ir/images/${item.file_image}`" :title="item.name" :subject="categories[item.category_id-1]" :age="item.ages"
+            <BooksBook v-for="item in works.research.value" :url="`https://37pajoohesh.ir/images/${item.file_image}`" :title="item.name" :subject="categories[item.category_id-1]" :age="item.ages"
                 :summary="item.description" name="-" :star="item.status" :id="item.id">
             </BooksBook>
         </div>
