@@ -88,7 +88,7 @@ export const useAuth = () => {
         await useFetch('https://37pajoohesh.ir/api/registerTeacher', {
             onRequest({ request, options }) {
                 toast.addLoad()
-                console.log('register teacher')
+                console.log('register')
                 options.headers = {
                     "Accept": "application/json"
                 }
@@ -97,7 +97,7 @@ export const useAuth = () => {
             },
             onRequestError({ request, options, error, response }) {
                 // Handle the request errors
-                toast.addError("RegisterTeacher: " + error)
+                toast.addError("Register: " + error)
                 toast.clearLoad()
             },
             onResponse({ request, response, options }) {
@@ -105,16 +105,17 @@ export const useAuth = () => {
                 toast.clearLoad()
                 console.log(response)
                 if (response.status == 200 || response.status == 201) {
-                    // cookie.value = response._data
-                    location.reload();
+                    toast.addSuccess("ثبت نام با موفقیت انجام شد")
                 }
             },
             onResponseError({ request, response, options }) {
                 // Handle the response errors 
-                toast.addError("RegisterTeacher: " + response._data.data)
+                if (response.status == 422) toast.addError("Register: " + "کد پرسنلی یا کد ملی تکراری است")
+                else toast.addError("Register: " + response._data.data)
             },
             initialCache: false,
-            server: false
+            server: false,
+            key: new Date().getTime().toString()
         })
     }
 
@@ -155,6 +156,7 @@ export const useAuth = () => {
     }
 
     const logout = () => {
+        const cookie = useCookie('token')
         console.log('logout')
         cookie.value = null
         user.user.value = null

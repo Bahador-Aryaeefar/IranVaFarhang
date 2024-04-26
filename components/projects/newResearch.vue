@@ -83,7 +83,7 @@
                     </div>
                 </template>
 
-                <div v-if="fill || edit" class="w-[20rem] grow">
+                <div class="w-[20rem] grow">
                     <div class="text-2xl font-bold text-center">
                         بارگذاری اثر
                     </div>
@@ -100,7 +100,7 @@
 
                 </div>
 
-                <div v-if="fill || edit" class="w-[20rem] grow">
+                <div class="w-[20rem] grow">
                     <div class="text-2xl font-bold text-center">
                         بارگذاری تصویر اثر
                     </div>
@@ -242,6 +242,8 @@ const add = () => {
 
     if (!name.value) isValid = false
     if (!category.value) isValid = false
+    if (!file.value) isValid = false
+    if (!pickedImage.value) isValid = false
     // if (!line.value) isValid = false
     if (!grade.value) isValid = false
     if (!individual.value) isValid = false
@@ -249,6 +251,18 @@ const add = () => {
     if (!description.value) isValid = false
 
     if (!isValid) return
+
+    let formData = new FormData()
+    
+    formData.append("name", name.value);
+    formData.append("category_id", categories.indexOf(category.value) + 1);
+    formData.append("line_id", 5);
+    formData.append("grade_id", grades.indexOf(grade.value) + 1);
+    formData.append("individual", types.indexOf(individual.value));
+    formData.append("partners", (partners.value) ? partners.value : 'ندارد');
+    formData.append("description", description.value);
+    formData.append("file", file.value);
+    formData.append("file_image", pickedImage.value);
 
     const req = {
         name: name.value,
@@ -261,7 +275,7 @@ const add = () => {
     }
 
     console.log(req);
-    research.addResearch(req)
+    research.addResearch(formData)
 }
 
 const update = () => {

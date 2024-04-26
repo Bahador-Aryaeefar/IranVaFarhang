@@ -11,5 +11,5 @@ definePageMeta({
 })
 
 const {coords} = useUser()
-if(![1,2,"1","2"].includes(coords.value.status)) navigateTo('/')
+if(![1,2,"1","2"].includes(coords.value?.status)) navigateTo('/')
 </script>
