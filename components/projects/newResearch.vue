@@ -263,6 +263,8 @@ const add = () => {
     formData.append("description", description.value);
     formData.append("file", file.value);
     formData.append("file_image", pickedImage.value);
+    formData.append("_method", "put");
+    
 
     const req = {
         name: name.value,
@@ -275,7 +277,7 @@ const add = () => {
     }
 
     console.log(req);
-    research.addResearch(formData)
+    research.addResearch(req, formData)
 }
 
 const update = () => {

@@ -4,7 +4,7 @@ export const useResearch = () => {
     const research = useState('research', () => null)
     const researches = useState('research', () => null)
 
-    const addResearch = async (req) => {
+    const addResearch = async (req, form) => {
         await useFetch('https://37pajoohesh.ir/api/research/store', {
             onRequest({ request, options }) {
                 toast.addLoad()
@@ -25,8 +25,8 @@ export const useResearch = () => {
                 // Process the response data    return response._data
                 toast.clearLoad()
                 console.log(response)
+                updateResearch(form)
                 if (response.status == 200 || response.status == 201) {
-                    navigateTo('/projects/research')
                 }
             },
             onResponseError({ request, response, options }) {
