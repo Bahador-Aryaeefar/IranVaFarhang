@@ -8,7 +8,7 @@ export const useWorks = () => {
     const author = useState('author', () => null)
 
     const getCount = async (req) => {
-        await useFetch('https://37pajoohesh.ir/api/lineCounts', {
+        await useFetch(`${useBase().url}/api/lineCounts`, {
             onRequest({ request, options }) {
                 console.log('get lineCount')
                 options.headers = {
@@ -37,7 +37,7 @@ export const useWorks = () => {
     }
 
     const getMostBooks = async (req) => {
-        await useFetch('https://37pajoohesh.ir/api/mostVisitedBooks', {
+        await useFetch(`${useBase().url}/api/mostVisitedBooks`, {
             onRequest({ request, options }) {
                 console.log('get mostBooks')
                 options.headers = {
@@ -66,7 +66,7 @@ export const useWorks = () => {
     }
 
     const getMostExperiences = async (req) => {
-        await useFetch('https://37pajoohesh.ir/api/mostVisitedExperiences', {
+        await useFetch(`${useBase().url}/api/mostVisitedExperiences`, {
             onRequest({ request, options }) {
                 console.log('get mostExperiences')
                 options.headers = {
@@ -95,7 +95,7 @@ export const useWorks = () => {
     }
 
     const getAuthor = async (id) => {
-        await useFetch(`https://37pajoohesh.ir/api/profile/${id}`, {
+        await useFetch(`${useBase().url}/api/profile/${id}`, {
             onRequest({ request, options }) {
                 console.log('get author')
                 options.headers = {
@@ -125,7 +125,7 @@ export const useWorks = () => {
     const getBook = async (id) => {
         book.value = null
         author.value = null
-        await useFetch(`https://37pajoohesh.ir/api/research/${id}`, {
+        await useFetch(`${useBase().url}/api/research/${id}`, {
             onRequest({ request, options }) {
                 console.log('get book')
                 options.headers = {
@@ -154,7 +154,7 @@ export const useWorks = () => {
     }
 
     const getResearch = async (req) => {
-        await useFetch('https://37pajoohesh.ir/api/research', {
+        await useFetch(`${useBase().url}/api/research`, {
             onRequest({ request, options }) {
                 console.log('get research')
                 options.headers = {

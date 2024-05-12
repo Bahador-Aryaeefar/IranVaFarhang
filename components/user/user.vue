@@ -132,7 +132,7 @@
 
             <div v-if="bookState == 1" class="mt-12 space-y-8">
                 <UserBook v-for="item in teacher?.data?.researchs.filter(x => x.line_id == 1)"
-                    :url="`https://37pajoohesh.ir/images/${item.file_image}`" :title="item.name"
+                    :url="`${useBase().url}/images/${item.file_image}`" :title="item.name"
                     :subject="categories[item.category_id - 1]" :age="item.ages" :summary="item.description"
                     :name="teacher?.data.name + ((teacher?.data?.last_name) ? teacher?.data?.last_name : '')"
                     :star="item.status" :id="item.id">
@@ -141,7 +141,7 @@
 
             <div v-if="bookState == 2" class="mt-12 space-y-8">
                 <UserBook v-for="item in teacher?.data?.researchs.filter(x => x.line_id == 2)"
-                    :url="`https://37pajoohesh.ir/images/${item.file_image}`" :title="item.name"
+                    :url="`${useBase().url}/images/${item.file_image}`" :title="item.name"
                     :subject="categories[item.category_id - 1]" :age="item.ages" :summary="item.description"
                     :name="teacher?.data.name + ((teacher?.data?.last_name) ? teacher?.data?.last_name : '')"
                     :star="item.status" :id="item.id">
@@ -150,7 +150,7 @@
 
             <div v-if="bookState == 3" class="mt-12 space-y-8">
                 <UserBook v-for="item in teacher?.data?.researchs.filter(x => x.line_id == 3)"
-                    :url="`https://37pajoohesh.ir/images/${item.file_image}`" :title="item.name"
+                    :url="`${useBase().url}/images/${item.file_image}`" :title="item.name"
                     :subject="categories[item.category_id - 1]" :age="item.ages" :summary="item.description"
                     :name="teacher?.data.name + ((teacher?.data?.last_name) ? teacher?.data?.last_name : '')"
                     :star="item.status" :id="item.id">

@@ -15,7 +15,7 @@
         </NuxtLink>
 
         <img class="mt-8 rounded-[2rem] shadow-md mx-auto w-full max-w-[20rem]"
-            :src="`https://37pajoohesh.ir/images/${book?.file_image}`" alt="book">
+            :src="`${useBase().url}/images/${book?.file_image}`" alt="book">
 
         <div class="mt-8 flex px-4 justify-between items-center">
             <div class="h-10 w-[12.5rem] mt-2" :style="`background: linear-gradient(90deg, #ffb400 ${score / 5 * 100}%, #e1e1e1 ${score / 5 * 100}%); mask-image: url('/icons/profile/star.svg'); -webkit-mask-image: url('/icons/profile/star.svg'); 
@@ -52,7 +52,7 @@
             </p>
         </div>
 
-        <a :href="`https://37pajoohesh.ir/images/${book?.file}`" target="_blank"
+        <a :href="`${useBase().url}/images/${book?.file}`" target="_blank"
             class="mt-8 rounded-full h-16 bg-[#57C5C6] flex items-center justify-between px-6">
             <div class="text-white font-bold text-2xl">
                 دانلود فایل
